@@ -1,1 +1,1 @@
-# junguler.github.io
+this will eventually become my personal website, little progress have been made already toworeds that goal but i suspect it's going to be a long process but one thing i have is patience so it's fine by me.

@@ -6,6 +6,7 @@ what i've learned so far:
 - [x] center everything in the page
 - [x] link some sites
 - [x] have a link to email me with emails clients
+- [X] apply margin spacing to left and right of the page
 
 what i'm planning to do in the near future:
 - [ ] draw a border around the whole page and specify page height and width for the site

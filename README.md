@@ -6,6 +6,8 @@ what i've learned so far:
 - [x] center everything in the page
 - [x] link some sites
 - [x] have a link to email me with emails clients
+- [X] apply a border around the page
+- [X] change background color to black and text to white
 - [X] apply margin spacing to left and right of the page
 
 what i'm planning to do in the near future:

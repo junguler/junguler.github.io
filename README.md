@@ -41,9 +41,8 @@ use `<h1>header</h1>` for header text, for writing prographs start with `<p>` an
 use the font tag `<font size="5"> <p>your size 5 paragraoh</p> </font>` more examples can be found [here](https://www.tutorialspoint.com/html/html_fonts.htm)
 
 - [X] change link colors
-```
-<a href="web link" style="color:yellow">what people see on the site</a>
-```
+
+`<a href="web link" style="color:yellow">what people see on the site</a>` or use `#FF0` or `#ffff00` for the same yellow color
 
 #### what i'm planning to do in the near future:
 - [ ] add icons for each page and link the websites to the icons

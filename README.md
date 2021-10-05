@@ -43,7 +43,7 @@ use the font tag `<font size="5"> <p>your size 5 paragraoh</p> </font>` more exa
 #### what i'm planning to do in the near future:
 - [ ] add icons for each page and link the websites to the icons
 - [ ] add bling, pictures, animated gifs, videos
-- [ ] change fonts for everything
+- [ ] change fonts for everything, add a [nerd font](https://github.com/ryanoasis/nerd-fonts) to this repo and use it's glyphs
 - [ ] replace the basic avatar with animated picture, preferably with fake 3d effect from G'mic
 - [ ] add different sub-pages whitin the site
 - [ ] learn some basic css to make life easier

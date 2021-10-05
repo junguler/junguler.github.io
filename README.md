@@ -36,6 +36,10 @@ specify background and text colors `background-color:black;color:white` specify 
 
 use `<h1>header</h1>` for header text, for writing prographs start with `<p1>` and end with `</p1>`, use `<br>` for line breaks and put everything in `<body></body>`
 
+- [X] change font size
+
+use the font tag `<font size="5"> <p>your size 5 paragraoh</p> </font>` more examples can be found [here](https://www.tutorialspoint.com/html/html_fonts.htm)
+
 #### what i'm planning to do in the near future:
 - [ ] add icons for each page and link the websites to the icons
 - [ ] add bling, pictures, animated gifs, videos

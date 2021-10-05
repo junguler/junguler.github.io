@@ -11,7 +11,6 @@ what i've learned so far:
 - [X] apply margin spacing to left and right of the page
 
 what i'm planning to do in the near future:
-- [ ] draw a border around the whole page and specify page height and width for the site
 - [ ] add icons for each page and link the websites to the icons
 - [ ] add bling, pictures, animated gifs, videos
 - [ ] change fonts for everything

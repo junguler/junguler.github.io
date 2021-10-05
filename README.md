@@ -19,7 +19,7 @@ start centering with `<center>` at the beeging and end it with on the last few l
 
 - [x] link some sites
 
-link a wbsite like this `<a href="https://www.deviantart.com/junguler">deviant art page</a>` the first part the is actual link, the second part is what people see on your site
+link a wbsite like this `<a href="https://www.deviantart.com/junguler">deviant art page</a>` the first part is the actual link, the second part is what people see on your site
 
 - [x] have a link to email me with emails clients
 

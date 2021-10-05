@@ -1,6 +1,6 @@
 this will eventually become my personal website, little progress have been made already toworeds that goal but i suspect it's going to be a long process but one thing i have is patience so it's fine by me.
 
-what i've learned so far:
+#### what i've learned so far:
 - [x] add website title 
 
 set the page title`<title>junguler</title>` 
@@ -36,7 +36,7 @@ specify background and text colors `background-color:black;color:white` specify 
 
 use `<h1>header</h1>` for header text, for writing prographs start with `<p1>` and end with `</p1>`, use `<br>` for line breaks and put everything in `<body></body>`
 
-what i'm planning to do in the near future:
+#### what i'm planning to do in the near future:
 - [ ] add icons for each page and link the websites to the icons
 - [ ] add bling, pictures, animated gifs, videos
 - [ ] change fonts for everything

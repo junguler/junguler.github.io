@@ -29,6 +29,11 @@ same as above, the first part is the actual email, the second part is what peopl
 - [X] change background color to black and text to white
 - [X] apply margin spacing to left and right of the page
 
+```
+<div style="background-color:black;color:white;padding:50px;margin:0px 450px 0px 450px;border-style: solid; border-width:5px;border-color: white;">
+```
+specify background and text colors `background-color:black;color:white` specify the distance each element will have to each outher `padding:50px` specify border margin (un-available area in the page) the order is top, right, bottom, left `margin:0px 450px 0px 450px` specify the border width and color `border-width:5px;border-color` the whole line is covered in double quates `""` and each part is seperated by `;`
+
 what i'm planning to do in the near future:
 - [ ] add icons for each page and link the websites to the icons
 - [ ] add bling, pictures, animated gifs, videos

@@ -60,11 +60,11 @@ use the font tag `<font size="5"> <p>your size 5 paragraoh</p> </font>` more exa
 ```
 - [X] create extra page(s), link it/them to main page and vise versa
 
-this process is split between two, first make we make a pages folder and put second.html in it, inside it we link to the main index.html
+this process is split between two, first we make a pages folder and put second.html in it, inside it we link to the main index.html
 ```
 <a href='../index.html'> go to main page </a>
 ```
-`../index.html` tells the page to go back one folder, now add the link the second page to the main index.page
+`../index.html` tells the page to go up/back one folder, now add the link of the second page to the main index.html
 ```
 <a href='pages/second.html'> second page of my website </a>
 ```

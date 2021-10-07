@@ -44,6 +44,21 @@ use the font tag `<font size="5"> <p>your size 5 paragraoh</p> </font>` more exa
 
 `<a href="web link" style="color:yellow">what people see on the site</a>` or use `#FF0` or `#ffff00` for the same yellow color, use `background-color:#666` to set background color
 
+- [X] make a button for links
+```
+  <br> <form action="page link">
+      <input type="submit" value="writings on the button"> 
+  </form> <br>
+```
+- [X] add a download link in your site
+```
+<a href="link of file to download">what people see on the site/a> <br>
+```
+- [X] add an image and link a page to it
+```
+<br> <a href="page link"><img src="image.jpg png or something else" width="48" height="48" alt="optional name"></a>
+```
+
 #### what i'm planning to do in the near future:
 - [ ] add icons for each page and link the websites to the icons
 - [ ] add bling, pictures, animated gifs, videos

@@ -58,7 +58,8 @@ use the font tag `<font size="5"> <p>your size 5 paragraoh</p> </font>` more exa
 ```
 <br> <a href="page link"><img src="image.jpg png or something else" width="48" height="48" alt="optional name"></a>
 ```
-- [X] create extra pages, link it to main page and vise versa
+- [X] create extra page(s), link it/them to main page and vise versa
+
 this process is split between two, first make we make a pages folder and put second.html in it, inside it we link to the main index.html
 ```
 <a href='../index.html'> go to main page </a>

@@ -83,7 +83,7 @@ for example linking to the page favicon becomes `../stuff/favicon.ico` instead o
 
 lets start by making a second folder named `secondpage` in our `stuff` folder, copy you images and lets make thumbnails for them:
 ```
-ffmpeg -i g-1.jpg -vf scale=-1:140 t-g_1.jpg
+ffmpeg -i g_1.jpg -vf scale=-1:140 t-g_1.jpg
 ```
 here we import the image with `-i g-1.jpg` apply scale filter to it, note we want to have unfied height for our thumbnails so we let ffmpeg decide their width by `-vf scale=-1` the only part we care about is height that we set to 140 pixels and lets add a `t-` behind the names to be able to easiliy differentiate them
 

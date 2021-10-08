@@ -75,6 +75,10 @@ this process is split between two, first we make a pages folder and put second.h
 ```
 change font size with bold text, styles can be `color`, `background-color`, `font-family`, `font-size`, `text-align` and more, for more information go [here](https://www.w3schools.com/html/html_styles.asp)
 
+- [X] linking to different folders of the website from relatevly
+
+linking to the page favicon becomes `stuff/favicon.ico` instead of `../stuff/favicon.ico` in the main index.html. for more info check this [stackoverflow](https://stackoverflow.com/questions/908765/how-to-link-html-pages-in-same-or-different-folders) page for more examples
+
 
 #### what i'm planning to do in the near future:
 - [ ] add icons for each page and link the websites to the icons

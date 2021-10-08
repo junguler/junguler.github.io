@@ -73,7 +73,7 @@ this process is split between two, first we make a pages folder and put second.h
 ```
 <b style="font-size: 24px">_image-manipulation:</b> 
 ```
-change font size with bold text, styles can be `color`, `background-color`, `font-family`, `font-size`, `text-align` for more information go [here](https://www.w3schools.com/html/html_styles.asp)
+change font size with bold text, styles can be `color`, `background-color`, `font-family`, `font-size`, `text-align` and more, for more information go [here](https://www.w3schools.com/html/html_styles.asp)
 
 
 #### what i'm planning to do in the near future:

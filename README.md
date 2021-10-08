@@ -79,6 +79,22 @@ change font size with bold text, styles can be `color`, `background-color`, `fon
 
 for example linking to the page favicon becomes `../stuff/favicon.ico` instead of `stuff/favicon.ico` in the main index.html, because in the `second.html` page we are in the `pages` folder and need to go back a folder `../` and then go to the `stuff` folder to link the favicon. for more info check this [stackoverflow](https://stackoverflow.com/questions/908765/how-to-link-html-pages-in-same-or-different-folders) page for more examples
 
+- [X] add pictures and thumbnails to second/project page
+
+lets start by making a second folder named `secondpage` in our `stuff` folder, copy you images and lets make thumbnails for them:
+```
+ffmpeg -i g-1.jpg -vf scale=-1:140 t-g_1.jpg
+```
+here we import the image with `-i g-1.jpg` apply scale filter to it, note we want to have unfied height for our thumbnails so we let ffmpeg decide their width by `-vf scale=-1` the only part we care about is height that we set to 140 pixels and lets add a `t-` behind the names to be able to easiliy differentiate them
+
+now make a thumbnail and link the image, again we have to link relatevly to the whole folder sctructure of our website
+```
+<a href="../stuff/secondpage/gm_1.jpg"><img src="../stuff/secondpage/t-gm_1.jpg" alt="optional name"></a>
+```
+throw a couple of `<br>` on there which are break tags so everything is not stuck toghetere
+```
+<br> <a href="../stuff/secondpage/gm_1.jpg"><img src="../stuff/secondpage/t-gm_1.jpg" alt="optional name"></a> <br><br>
+```
 
 #### what i'm planning to do in the near future:
 - [ ] add icons for each page and link the websites to the icons

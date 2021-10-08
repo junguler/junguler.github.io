@@ -91,7 +91,7 @@ now make a thumbnail and link the image, again we have to link relatevly to the 
 ```
 <a href="../stuff/secondpage/gm_1.jpg"><img src="../stuff/secondpage/t-gm_1.jpg" alt="optional name"></a>
 ```
-throw a couple of `<br>` on there which are break tags so everything is not stuck toghetere
+throw a couple of `<br>` on there which are break tags so everything is not stuck together
 ```
 <br> <a href="../stuff/secondpage/gm_1.jpg"><img src="../stuff/secondpage/t-gm_1.jpg" alt="optional name"></a> <br><br>
 ```

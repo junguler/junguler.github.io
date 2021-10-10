@@ -19,7 +19,7 @@ what happened? everything html has to be inside tags `<>` there are many differe
 
 the header tag is for everything at the top of our page, the body is everything in the middle of our page and there is also a footer tag that's not really needed for now ...
 
-as soon as you made that you made `index.html` you can visit your newly created site which is your github_name + .github.io 
+as soon as you made that `index.html` you can visit your newly created site which is your `github_name + .github.io`
 
 here is mine [https://junguler.github.io/](https://junguler.github.io/)
 

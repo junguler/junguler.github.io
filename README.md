@@ -49,3 +49,7 @@ you can add images, movies, music and many other things to your repo, i have mad
 the reason for making an empty file is github automatically removes empty directories inside your repo, you can remove the empty txt file as long as you have uploaded one other file inside that folder which can be accessed by clicking `add file` and choosing `upload files`
 
 ### link a file that you uploaded in the directory in your page
+lets assume i've uploaded a jpg file named `avatar` in my `stuff` folder, linking it to my page is easy
+```
+<img src="stuff/avatar.jpg"/>
+```

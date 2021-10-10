@@ -1,5 +1,16 @@
 my work in progress website, i moved this markdown file to the old-README.md for archival purposes, i'll try to explain what i've learned better this time
 
+### quick links
+ * [make index.html](https://github.com/junguler/junguler.github.io#make-indexhtml)
+ * [vscodium](https://github.com/junguler/junguler.github.io#install-vscodium-or-another-ide)
+ * [add files to repo](https://github.com/junguler/junguler.github.io#add-files-to-your-repo)
+ * [link files to page](https://github.com/junguler/junguler.github.io#link-a-file-that-you-uploaded-in-the-directory-in-your-page)
+ * [add favicon](https://github.com/junguler/junguler.github.io#add-favicon-to-your-page)
+ * [add styles to tags](https://github.com/junguler/junguler.github.io#add-styles-to-tags)
+ * [add padding to page](https://github.com/junguler/junguler.github.io#add-padding-to-our-page)
+ * [add extra pages](https://github.com/junguler/junguler.github.io#add-extra-pages-to-our-site)
+ * [link extra page to home](https://github.com/junguler/junguler.github.io#link-the-second-page-to-our-homepage-and-vise-versa)
+
 ### first step
 make a github account, start a new repo with your user name and add `.github.io` at the end of it
 
@@ -121,3 +132,4 @@ for our second page to find the favicon we also need to link it like this as wel
 ```
 <link rel="shortcut icon" type="image/ico" href="../favicon.ico"/>
 ```
+#### more stuff will be added as i learn more ...

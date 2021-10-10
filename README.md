@@ -1,4 +1,4 @@
-my work in progress website, i moved this markdown file to the old-README.md for archival purposes, i'll try to explain what i've learned better this time
+my work in progress website, the old markdown file was moved to [old-README.md](https://github.com/junguler/junguler.github.io/blob/main/old-README.md) for archivable purposes and i try to explain what i've learned better this time
 
 ### quick links
  * [make index.html](https://github.com/junguler/junguler.github.io#make-indexhtml)
@@ -132,4 +132,4 @@ for our second page to find the favicon we also need to link it like this as wel
 ```
 <link rel="shortcut icon" type="image/ico" href="../favicon.ico"/>
 ```
-#### more stuff will be added as i learn more ...
+#### more stuff will be added as i learn ...

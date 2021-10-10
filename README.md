@@ -5,7 +5,7 @@ my work in progress website, the old markdown file was moved to [old-README.md](
  * [make index.html](https://github.com/junguler/junguler.github.io#make-indexhtml)
  * [vscodium](https://github.com/junguler/junguler.github.io#install-vscodium-or-another-ide)
  * [add files to repo](https://github.com/junguler/junguler.github.io#add-files-to-your-repo)
- * [link files to page](https://github.com/junguler/junguler.github.io#link-a-file-that-you-uploaded-in-the-directory-in-your-page)
+ * [link files in the webpage](https://github.com/junguler/junguler.github.io#link-a-file-that-you-uploaded-in-the-directory-in-your-page)
  * [add favicon](https://github.com/junguler/junguler.github.io#add-favicon-to-your-page)
  * [add styles to tags](https://github.com/junguler/junguler.github.io#add-styles-to-tags)
  * [add padding to page](https://github.com/junguler/junguler.github.io#add-padding-to-our-page)

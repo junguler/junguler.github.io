@@ -135,7 +135,7 @@ for our second page to find the favicon we also need to link it like this as wel
 <link rel="shortcut icon" type="image/ico" href="../favicon.ico"/>
 ```
 ### add footer to our pages
-footer stays at the end of our page and usually contains contact information or web hosting infor and technologies, lets start by opening a footer tag:
+footer stays at the end of our page and usually contains contact information or web hosting and technologies, lets start by opening a footer tag:
 ```
 <footer>
 </footer>
@@ -144,7 +144,7 @@ inside our first opened tag we will add some stylings:
 ```
 <footer style="position: fixed;bottom: 2%;">
 ```
-first part is `position` which we will set to fixed as we want it to always be shown, next is `bottom` which we will set to 2% which forces up our footer %2, now lets add our info and include a link with yellow style coloring:
+first part is `position` which we will set to fixed as we want it to always be shown, next is `bottom` which we will set to 2% which forces our footer %2 up, now lets add our info and include a link with yellow style coloring:
 ```
 made with github's free web hosting, look <a style="color: yellow;" href="https://pages.github.com/">here</a> for more information
 ```

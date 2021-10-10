@@ -11,6 +11,7 @@ my work in progress website, the old markdown file was moved to [old-README.md](
  * [add padding to page](https://github.com/junguler/junguler.github.io#add-padding-to-our-page)
  * [add extra pages](https://github.com/junguler/junguler.github.io#add-extra-pages-to-our-site)
  * [link extra page to home](https://github.com/junguler/junguler.github.io#link-the-second-page-to-our-homepage-and-vise-versa)
+ * [add footer to pages](https://github.com/junguler/junguler.github.io#add-footer-to-our-pages)
 
 ### first step
 make a github account, start a new repo with your username and add `.github.io` at the end of it, see [here](https://pages.github.com/) for detailed information

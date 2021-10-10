@@ -81,3 +81,18 @@ and things
 are white
 </p>
 ```
+
+### add padding to our page
+since monitor and displays are getting quite large in dpi we have to force everything in our site in the middle for the page to look better in all sizes of the screen, for this purpose we use the padding option. padding can be set many different things like pixels, centimeters and other things but the best option is percentage which takes to account the browsers windows size.
+```
+<div style="background-color:#333;color:#AAA;padding:3% 16% 3% 16%;">
+```
+i have this set at the top of my page because it has to be applied to everything in the page, this style has 3 arguments in it which are combined using `;` .
+
+first `background-color:#333` which sets the background color to the hex value of `#333` which a dark grey color
+
+second `color:#AAA` sets the color of everything we haven't specifically set the color of the a bright grey
+
+third `padding:3% 16% 3% 16%` pads the sides of our page to be shoved in the middle, it goes in the top, right, bottom, left order. so if i wanted to add more padding to the right i would of changed the second number
+
+note: we are not making a mobile ready site as it's out of my level of knowledge and understating of html at this point, maybe we'll get to it some day

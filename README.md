@@ -23,6 +23,9 @@ as soon as you made that `index.html` you can visit your newly created site whic
 
 here is mine [https://junguler.github.io/](https://junguler.github.io/)
 
+### install VSCodium or another ide
+i recommend you install vs codium which is a foss fork of vs code to make life easier, especially since it comes with many autocomplete features which cuts down and typing by quite a lot, install it from [here](https://vscodium.com/)
+
 ### some basic tags and how to use them
 title: sets title of your page which is shown in the browser tab bar
 ```

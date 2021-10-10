@@ -19,6 +19,10 @@ what happened? everything html has to be inside tags `<>` there are many differe
 
 the header tag is for everything at the top of our page, the body is everything in the middle of our page and there is also a footer tag that's not really needed for now ...
 
+as soon as you made that you made `index.html` you can visit your newly created site which is your github_name + .github.io 
+
+here is mine [https://junguler.github.io/](https://junguler.github.io/)
+
 ### some basic tags and how to use them
 title: sets title of your page which is shown in the browser tab bar
 ```
@@ -43,3 +47,5 @@ img: add an image into your page
 you can add images, movies, music and many other things to your repo, i have made a `stuff` repo for this purpose. if you are working on the github web interface making a new folder is quite easy, click on `add file` on the top of your repo page click on `create a new file`. by default github puts your new file at the root directory of you repo but we want to make a new folder so in the name field at the top add a slash `/` to let github know we want to make a new folder, name you folder whatever you want and put another slash `/` after it and make an empty txt file like `1.txt` and click commit at the bottom.
 
 the reason for making an empty file is github automatically removes empty directories inside your repo, you can remove the empty txt file as long as you have uploaded one other file inside that folder which can be accessed by clicking `add file` and choosing `upload files`
+
+### link a file that you uploaded in the directory in your page

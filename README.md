@@ -62,3 +62,22 @@ favicon are the little icons that show up at the left side of tab bar in your br
 ```
 <link rel="shortcut icon" type="image/ico" href="favicon.ico"/>
 ```
+
+### add styles to tags
+styles are a very easy way to apply certain effects to the content of your tags, they sit right after you opened a new tag with `<tag style: > </tag>` lets apply a pink color to a paragraph to show and example:
+```
+<p style=color:pink >  everything is pink </p>
+```
+another example, lets apply a grey background color to the whole page using the body tag
+```
+<body style="background-color: #222;">
+everything in the page is now with a background of grey
+</body>
+```
+black text is hard to read in a grey background so lets make all the text in our paragraph have a white text
+```
+<p style="color: white;"> stuff
+and things
+are white
+</p>
+```

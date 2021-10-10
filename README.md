@@ -126,7 +126,7 @@ in the `second.html` do:
 ```
 <a href="../index.html" style="background-color:#444;color:white;font-size: 18px">home</a>  
 ```
-here we called our main page `home`, notice how we add `../` behind `index.html` because we want to go one page up to the root directory to link the main page
+here we called our main page `home`, notice how we add `../` behind `index.html` because we want to go one page up/back to the root directory to link the main page
 
 for our second page to find the favicon we also need to link it like this as well 
 ```

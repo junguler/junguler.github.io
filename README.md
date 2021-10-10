@@ -86,7 +86,7 @@ another example, lets apply a grey background color to the whole page using the 
 everything in the page is now with a background of grey
 </body>
 ```
-black text is hard to read in a grey background so lets make all the text in our paragraph have a white text
+black text is hard to read in a grey background so lets make all the text in our paragraph have a white color
 ```
 <p style="color: white;"> stuff
 and things

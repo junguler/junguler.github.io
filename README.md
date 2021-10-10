@@ -53,3 +53,9 @@ lets assume i've uploaded a jpg file named `avatar` in my `stuff` folder, linkin
 ```
 <img src="stuff/avatar.jpg"/>
 ```
+
+### add favicon to your page
+favicon are the little icons that show up at the left side of tab bar in your browser, altho we can use other image types for this lets do it by the book and convert it to a proper favicon using [this website](https://iconifier.net/) once you converted your image to favicon rename it to `favicon.ico` if it's not already and place it in the root directory of your repo, just hit `add file` then `upload files` method. now lets add it to our page
+```
+<link rel="shortcut icon" type="image/ico" href="favicon.ico"/>
+```

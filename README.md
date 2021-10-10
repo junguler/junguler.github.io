@@ -1,6 +1,7 @@
 my work in progress website, the old markdown file was moved to [old-README.md](https://github.com/junguler/junguler.github.io/blob/main/old-README.md) for archivable purposes and i try to explain what i've learned better this time
 
 ### quick links
+ * [first step](https://github.com/junguler/junguler.github.io#first-step)
  * [make index.html](https://github.com/junguler/junguler.github.io#make-indexhtml)
  * [vscodium](https://github.com/junguler/junguler.github.io#install-vscodium-or-another-ide)
  * [add files to repo](https://github.com/junguler/junguler.github.io#add-files-to-your-repo)

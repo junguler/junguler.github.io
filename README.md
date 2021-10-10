@@ -87,7 +87,7 @@ since monitor and displays are getting quite large in dpi we have to force every
 ```
 <div style="background-color:#333;color:#AAA;padding:3% 16% 3% 16%;">
 ```
-i have this set at the top of my page because it has to be applied to everything in the page, this style has 3 arguments in it which are combined using `;` .
+i have this set at the top of my page because it has to be applied to everything in the page, this style has 3 arguments in it which are combined using `;`
 
 first `background-color:#333` which sets the background color to the hex value of `#333` which a dark grey color
 
@@ -96,3 +96,28 @@ second `color:#AAA` sets the color of everything we haven't specifically set the
 third `padding:3% 16% 3% 16%` pads the sides of our page to be shoved in the middle, it goes in the top, right, bottom, left order. so if i wanted to add more padding to the right i would of changed the second number
 
 note: we are not making a mobile ready site as it's out of my level of knowledge and understating of html at this point, maybe we'll get to it some day
+
+### add extra pages to our site
+adding extra pages is easy, just make another `.html` file, if you don't plan on making many of these extra pages you could get away with putting all of them in the root directory and this makes linking to other pages of the same site easier but i'll opt to make an extra page names `pages` to keep everything organized 
+
+our second page is named `second.html` which is inside our `pages` folder, everything we did on the main `index.html` can be applied to this page too but we remove duplicated information and put new things inside.
+
+### link the second page to our homepage and vise versa
+lets put a link at the top of both our pages to link them together 
+
+in the `index.html` do:
+```
+<a href="pages/second.html" style="background-color:#444;color:white;font-size: 18px;">projects</a>  
+```
+here i called my second page `projects` but linked to `second.html` which is the actual name of the page
+
+in the `second.html` do:
+```
+<a href="../index.html" style="background-color:#444;color:white;font-size: 18px">home</a>  
+```
+here we called our main `page home`, notice how we add `../` behind `index.html` because we want to go one page up to the root directory to link the main page
+
+for our second page to find the favicon we also need to link it like this as well 
+```
+<link rel="shortcut icon" type="image/ico" href="../favicon.ico"/>
+```

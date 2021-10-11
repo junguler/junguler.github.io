@@ -156,4 +156,7 @@ made with github's free web hosting, look <a style="color: yellow;" href="https:
 ```
 for my second/project page i opted to use the `relative` option for `position` which puts our footer at the end of the page's content since i didn't want it to be shown on the page, you can also use a fixed postion in such cases of long pages but you need to add some background color styling to differentiate it from the contents of the page.
 
+### add white space in html
+anything more than one space between two words in html is not recognized/shown in the page, we can get around this by adding `&nbsp;` for one space or use it multiple times `&nbsp;&nbsp;`, use `&ensp;` for two spaces and `&emsp;` for 4 space. just put them anywhere you want additional spaces
+
 #### more stuff will be added as i learn ...

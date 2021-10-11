@@ -12,6 +12,7 @@ my work in progress website, the old markdown file was moved to [old-README.md](
  * [add extra pages](https://github.com/junguler/junguler.github.io#add-extra-pages-to-our-site)
  * [link extra page to home](https://github.com/junguler/junguler.github.io#link-the-second-page-to-our-homepage-and-vise-versa)
  * [add footer to pages](https://github.com/junguler/junguler.github.io#add-footer-to-our-pages)
+ * [add white spaces](https://github.com/junguler/junguler.github.io#add-white-space-in-html)
 
 ### first step
 make a github account, start a new repo with your username and add `.github.io` at the end of it, see [here](https://pages.github.com/) for detailed information
@@ -155,5 +156,8 @@ made with github's free web hosting, look <a style="color: yellow;" href="https:
 </footer>
 ```
 for my second/project page i opted to use the `relative` option for `position` which puts our footer at the end of the page's content since i didn't want it to be shown on the page, you can also use a fixed postion in such cases of long pages but you need to add some background color styling to differentiate it from the contents of the page.
+
+### add white space in html
+anything more than one space between two words in html is not recognized/shown in the page, we can get around this by adding `&nbsp;` for one space or use it multiple times `&nbsp;&nbsp;`, use `&ensp;` for two spaces and `&emsp;` for 4 space. just put them anywhere you want additional spaces
 
 #### more stuff will be added as i learn ...

@@ -162,7 +162,7 @@ for my second/project page i opted to use the `relative` option for `position` w
 anything more than one space between two words in html is not recognized/shown in the page, we can get around this by adding `&nbsp;` for one space or use it multiple times `&nbsp;&nbsp;`, use `&ensp;` for two spaces and `&emsp;` for 4 space. just put them anywhere you want additional spaces
 
 ### align text to left and image to the right
-this seems like a very small issue but unless you watch the website at 100% page zoom the image does not stay at the same place in relation to the text on the screen. we go around this issue buy:
+this seems like a very small issue but unless you watch the website at 100% page zoom the image does not stay at the same place in relation to the text on the screen. we go around this issue by:
 
 first adding style to our body tag `display: flex;` 
 ```

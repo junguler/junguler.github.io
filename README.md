@@ -168,9 +168,9 @@ first adding style to our body tag `display: flex;`
 ```
 <body style="background-color: #222;display: flex;">
 ```
-now float your image to the right side of the screen `float: right;` and align it to the whole page taking the page padding into consideration `display: inline-block;` 
+now float your image to the right side of the screen `float: right;`
 ```
- <img style="float: right;display: inline-block;" src="stuff/avatar.jpg"; />
+ <img style="float: right;" src="stuff/avatar.jpg"; />
 ```
 the last step is to make our paragraph have automatic width `width: auto;`
 ```

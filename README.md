@@ -13,6 +13,7 @@ my work in progress website, the old markdown file was moved to [old-README.md](
  * [link extra page to home](https://github.com/junguler/junguler.github.io#link-the-second-page-to-our-homepage-and-vise-versa)
  * [add footer to pages](https://github.com/junguler/junguler.github.io#add-footer-to-our-pages)
  * [add white spaces](https://github.com/junguler/junguler.github.io#add-white-space-in-html)
+ * [align text to left and image to right](https://github.com/junguler/junguler.github.io#align-text-to-left-and-image-to-the-right)
 
 ### first step
 make a github account, start a new repo with your username and add `.github.io` at the end of it, see [here](https://pages.github.com/) for detailed information
@@ -159,5 +160,23 @@ for my second/project page i opted to use the `relative` option for `position` w
 
 ### add white space in html
 anything more than one space between two words in html is not recognized/shown in the page, we can get around this by adding `&nbsp;` for one space or use it multiple times `&nbsp;&nbsp;`, use `&ensp;` for two spaces and `&emsp;` for 4 space. just put them anywhere you want additional spaces
+
+### align text to left and image to the right
+this seems like a very small issue but unless you watch the website at 100% page zoom the image does not stay at the same place in relation to the text on the screen. we go around this issue buy:
+
+first adding style to our body tag `display: flex;` 
+```
+<body style="background-color: #222;display: flex;">
+```
+now float your image to the right side of the screen `float: right;` and align it to the whole page taking the page padding into consideration `display: inline-block;` 
+```
+ <img style="float: right;display: inline-block;" src="stuff/avatar.jpg"; />
+```
+the last step is to make our paragraph have automatic width `width: auto;`
+```
+<p style="width: auto;">
+paragraph goes here
+</p>
+```
 
 #### more stuff will be added as i learn ...

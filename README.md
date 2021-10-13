@@ -14,6 +14,7 @@ my work in progress website, the old markdown file was moved to [old-README.md](
  * [add footer to pages](https://github.com/junguler/junguler.github.io#add-footer-to-our-pages)
  * [add white spaces](https://github.com/junguler/junguler.github.io#add-white-space-in-html)
  * [align text to left and image to right](https://github.com/junguler/junguler.github.io#align-text-to-left-and-image-to-the-right)
+ * [force content to stay in the page when zoomed in](https://github.com/junguler/junguler.github.io#keep-banner-from-overflowing-the-page)
 
 ### first step
 make a github account, start a new repo with your username and add `.github.io` at the end of it, see [here](https://pages.github.com/) for detailed information

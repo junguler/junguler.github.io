@@ -61,6 +61,11 @@ img: add an image into your page
 ```
 <img src="image.jpg" alt="some info">
 ```
+br: makes a break between lines, like using inter in a text editor
+```
+<br> <p> stuff </> <br>
+```
+above code applies a break before and after our paragraph, sometimes you need to pass two breaks `<br><br>` to actually give two lines the one line distance we need. this could be two at the last part of above line, one on at the end of above line and on at the start of below line or two at the start of the below line.
 
 ### add files to your repo
 you can add images, movies, music and many other things to your repo, i have made a `stuff` folder for this purpose. if you are working on the github web interface making a new folder is quite easy, click on `add file` on the top of your repo page click on `create a new file`. by default github puts your new file at the root directory of you repo but we want to make a new folder so in the name field at the top add a slash `/` to let github know we want to make a new folder, name your folder whatever you want and put another slash `/` after it and make an empty txt file like `1.txt` and click commit at the bottom.

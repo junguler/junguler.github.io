@@ -178,5 +178,14 @@ the last step is to make our paragraph have automatic width `width: auto;`
 paragraph goes here
 </p>
 ```
+### keep banner from overflowing the page
+by default our banner image would overflow and get out of our page when zoomed in, add a overflow style to the whole page to keep this from happening:
+```
+<div style="background-color:#222;color:#ccc;padding:0% 16% 3% 16%;overflow: hidden;">
+```
+now force our banner to always keep at 100% width and keep our whole page padding too:
+```
+<img style="width: 100%;" src="stuff/h-banner.jpg" ><br>
+```
 
 #### more stuff will be added as i learn ...

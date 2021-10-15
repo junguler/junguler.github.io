@@ -195,4 +195,11 @@ now force our banner to always keep at 100% width and keep our whole page paddin
 <img style="width: 100%;" src="stuff/h-banner.jpg" ><br>
 ```
 
+### add go to top button
+add a simple un-intrusive go to top button, upload your image or simply use text
+```
+<a style="position: fixed;bottom: 2%;right: 16%;" href="#"><img src="../stuff/up.png"></a>
+```
+every browsers sees `#` as the top of the page so we can use it as a link, lets fix it's position to to the bottom of the screen and 16% to the right, exactly like our page padding.
+
 #### more stuff will be added as i learn ...

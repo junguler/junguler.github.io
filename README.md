@@ -203,7 +203,7 @@ add a simple un-intrusive go to top button, upload your image or simply use text
 ```
 every browsers sees `#` as the top of the page so we can use it as a link, lets fix it's position to to the bottom of the screen and 16% to the right, exactly like our page padding.
 
-this is the most basic implementation i could find online, other methods involve assigning id inside tags and link them using the `#id`, here is an example of making and a go to bottom button:
+this is the most basic implementation i could find online, other methods involve assigning id inside tags and link them using the `#id`, here is an example of making a go to bottom button:
 
 add foot id inside our footer
 ```

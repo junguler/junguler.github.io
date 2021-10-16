@@ -16,6 +16,7 @@ my work in progress website, the old markdown file was moved to [old-README.md](
  * [add white spaces](https://github.com/junguler/junguler.github.io#add-white-space-in-html)
  * [align text to left and image to right](https://github.com/junguler/junguler.github.io#align-text-to-left-and-image-to-the-right)
  * [force content to stay in the page when zoomed in](https://github.com/junguler/junguler.github.io#keep-banner-from-overflowing-the-page)
+ * [add go to top button](https://github.com/junguler/junguler.github.io#add-go-to-top-button)
 
 ### first step
 make a github account, start a new repo with your username and add `.github.io` at the end of it, see [here](https://pages.github.com/) for detailed information
@@ -193,6 +194,24 @@ by default our banner image would overflow and get out of our page when zoomed i
 now force our banner to always keep at 100% width and keep our whole page padding too:
 ```
 <img style="width: 100%;" src="stuff/h-banner.jpg" ><br>
+```
+
+### add go to top button
+add a simple un-intrusive go to top button, upload your image or simply use text
+```
+<a style="position: fixed;bottom: 2%;right: 16%;" href="#"><img src="../stuff/up.png"></a>
+```
+every browsers sees `#` as the top of the page so we can use it as a link, lets fix it's position to to the bottom of the screen and 16% to the right, exactly like our page padding.
+
+this is the most basic implementation i could find online, other methods involve assigning id inside tags and link them using the `#id`, here is an example of making a go to bottom button:
+
+add foot id inside our footer
+```
+<footer id="foot"></footer>
+```
+link it
+```
+<a href="#foot">Go to bottom</a>
 ```
 
 #### more stuff will be added as i learn ...

@@ -214,4 +214,17 @@ link it
 <a href="#foot">Go to bottom</a>
 ```
 
+### change background color or use an image
+in this example lets apply a gradient to our page using `background-image` style
+```
+background-image: linear-gradient(#333,#111);
+```
+we used a linear gradient and applied color `#333` to top of our page and `#111` to the bottom, because our margin color is also is set to `#111` the content of the page blends with the unused margins.
+
+applying and image to our background is also easy:
+```
+background-image: url("background.jpg");
+```
+be mindful of the the image location, if it's in a folder you to have to link it accordingly, for way more examples on this check this [page](https://www.edureka.co/blog/background-image-in-html/) as it was how i learned it
+
 #### more stuff will be added as i learn ...

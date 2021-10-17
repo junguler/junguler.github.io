@@ -17,6 +17,7 @@ my work in progress website, the old markdown file was moved to [old-README.md](
  * [align text to left and image to right](https://github.com/junguler/junguler.github.io#align-text-to-left-and-image-to-the-right)
  * [force content to stay in the page when zoomed in](https://github.com/junguler/junguler.github.io#keep-banner-from-overflowing-the-page)
  * [add go to top button](https://github.com/junguler/junguler.github.io#add-go-to-top-button)
+ * [add background image or use gradient colors](https://github.com/junguler/junguler.github.io#change-background-color-or-use-an-image)
 
 ### first step
 make a github account, start a new repo with your username and add `.github.io` at the end of it, see [here](https://pages.github.com/) for detailed information

@@ -228,4 +228,41 @@ background-image: url("background.jpg");
 ```
 be mindful of the the image location, if it's in a folder you to have to link it accordingly, for way more examples on this check this [page](https://www.edureka.co/blog/background-image-in-html/) as it was how i learned it
 
+### add some basic css
+cascading style sheets or css are an easier way to have an orginized place for all of our styles and will help you write more efficiently and type less duplicate codes, so far we added all the styles we needed inside our tags using `style=""` but if we know we have some styles that are needed to apply to many things we can write the style once in our css file and have it used automatically for basic tags or manually add them as a class, so lets show some example of this
+
+first of all, lets link this css file at the top of our page, make sure to link this relativly to where your html page is located, in my case my second page is in a folder in our website directory so i use `href="../style.css"` for that page because we need to go up/back one page
+```
+<link href="style.css" rel="stylesheet" type="text/css">
+```
+for basic tags like `<p>` `<body>` that we want to always include and have a unified look for all of our pages we do this in our `style.css`:
+```
+body {
+    background-color: #111;
+}
+```
+the above style automatically gets used every time we use a `<body></body>` tag
+
+for more specific style sheets we add a `.` before the style and manually apply it to our tags using `class=""`
+```
+.banner {
+    width: 100%;
+}
+```
+i just want to apply this style in my banner pictures so we do this:
+```
+<img class="banner" src="stuff/h-banner.jpg">
+```
+if you don't want the same style to be applied to basic tags like `<p></p>` in the above example remove that section from our style.css and make a custom class style for and apply it manually.
+```
+.mypara {
+    text-align: center;
+}
+```
+and add this custom class to a paragraph
+```
+<p class="mypara"> every text in this paragraph is centered </p>
+```
+and a paragraph that doesn't include this class will have a default and basic look
+
 #### more stuff will be added as i learn ...

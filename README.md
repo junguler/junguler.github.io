@@ -18,6 +18,7 @@ my work in progress website, the old markdown file was moved to [old-README.md](
  * [force content to stay in the page when zoomed in](https://github.com/junguler/junguler.github.io#keep-banner-from-overflowing-the-page)
  * [add go to top button](https://github.com/junguler/junguler.github.io#add-go-to-top-button)
  * [add background image or use gradient colors](https://github.com/junguler/junguler.github.io#change-background-color-or-use-an-image)
+ * [add some basic css](https://github.com/junguler/junguler.github.io#add-some-basic-css)
 
 ### first step
 make a github account, start a new repo with your username and add `.github.io` at the end of it, see [here](https://pages.github.com/) for detailed information
@@ -231,7 +232,7 @@ be mindful of the the image location, if it's in a folder you to have to link it
 ### add some basic css
 cascading style sheets or css are an easier way to have an orginized place for all of our styles and will help you write more efficiently and type less duplicate codes, so far we added all the styles we needed inside our tags using `style=""` but if we know we have some styles that are needed to apply to many things we can write the style once in our css file and have it used automatically for basic tags or manually add them as a class, so lets show some example of this
 
-first of all, lets link this css file at the top of our page, make sure to link this relativly to where your html page is located, in my case my second page is in a folder in our website directory so i use `href="../style.css"` for that page because we need to go up/back one page
+first of all, lets make a text file named `style.css` and link it at the top of our page, make sure to link this relativly to where your html page is located, in my case my second page is in a folder in our website directory so i use `href="../style.css"` for that page because we need to go up/back one page
 ```
 <link href="style.css" rel="stylesheet" type="text/css">
 ```

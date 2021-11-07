@@ -40,6 +40,16 @@ footer {
     color: greenyellow;
 }
 
+.verticalimg {
+    height: 100%;
+    width: auto;
+}
+
+.horizanimg {
+    height: auto%;
+    width: 100%;
+}
+
 a:link {
     color: #fff;
 }

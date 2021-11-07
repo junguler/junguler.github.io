@@ -39,3 +39,42 @@ footer {
     background-color: #000;
     color: greenyellow;
 }
+
+a:link {
+    color: #fff;
+}
+
+li {
+    position: relative;
+}
+
+li ul {
+    display: none;
+    position: absolute;
+    background-color: #555;
+    padding: 3px;
+}
+  
+li:hover ul {
+    display: block;
+}
+  
+.nav {
+    position: fixed;
+    background-color: #444;
+    font-size: 20px;
+    float: left;
+    padding: 0px;
+    display: flex;
+    list-style: none;
+    flex-direction: row;
+}
+
+.menu {
+    display: inline-block;
+    font-weight: bold;
+}
+  
+ul {
+    list-style: none;
+}

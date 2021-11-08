@@ -291,4 +291,6 @@ add the code you copied after these lines and end the page with your footer if y
 
 i'm planning to use this method to easily convert my markdown tutorials to pages for my website that look like they belong and written from scratch
 
+update: converting 9 markdown tutorial pages to html only took 2 hours to get up and running, this is the fastest way of writing html i know of
+
 #### more stuff will be added as i learn ...

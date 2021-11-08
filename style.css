@@ -12,6 +12,15 @@ footer {
     bottom: 2%;
 }
 
+img {
+    width: 100%;
+    height: auto;
+}
+
+.footer2 {
+    position: relative;
+}
+
 .banner {
     width: 100%;
 }
@@ -22,12 +31,6 @@ footer {
     padding: 2% 16% 2% 16%;
     overflow: hidden;
     background-image: linear-gradient(#333,#111);
-}
-
-.bannerlink {
-    background-color: #444;
-    color: white;
-    font-size: 18px;
 }
 
 .linkyel {
@@ -52,6 +55,11 @@ footer {
 
 a:link {
     color: #fff;
+}
+
+video {
+    width: 100%;
+    height: auto;
 }
 
 li {

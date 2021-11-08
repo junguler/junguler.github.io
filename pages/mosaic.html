@@ -334,6 +334,27 @@ lets change it to <code>fname = r'input.jpg'</code> so we have a unified way of 
 </tr>
 </tbody>
 </table>
+
+<h2>make animated gif out of one image</h2>
+<p>so far we only used mosaic for places, objects and people, lets change all that and do a little bit of halftone abstract art, here is how our image looks</p>
+<p><img class="verticalimg" src="https://user-images.githubusercontent.com/59083599/140741500-c66530c1-a86a-4eb3-a259-b048c6dff28a.jpg" alt="halftone"></p>
+<p>now lets use a ffmpeg filter called scroll to scroll this image vertically to make an animated gif</p>
+<pre class="hljs"><code>for h in {00..98..4} ; do ffmpeg -i halftone.jpg -vf scroll=vpos=0.$h $h.jpg ; done
+</code></pre>
+<p>this loop iterates thru the numbers of 00 to 98 every 4 number and add them as decimals to our scroll filter, now remove your halftone.jpg image or move it elsewhere since we already have a 00 value which is the same as input and we want to avoid duplicates to have a smooth animation, we are ready to convert these using mosaic but i’m going to show how the scroll filter effected our image in this gif below</p>
+<p><img class="verticalimg" src="https://user-images.githubusercontent.com/59083599/140742712-8fb49de6-2bf4-412c-aaba-25d6f47672eb.gif" alt="scroll"></p>
+<p>now lets convert these images with mosaic</p>
+<pre class="hljs"><code>for i in *.jpg ; do cp $i input.jpg ; python3 ~/Music/mosaic/mosaic+.py ; rm input.jpg ; mv output.svg $i.svg ; done 
+</code></pre>
+<p>convert your output svg files to png pictures, setting width to 400 pixels</p>
+<pre class="hljs"><code>for i in *.svg ; do ffmpeg -i $i -vf scale=400:-1 o-$i.png ; done 
+</code></pre>
+<p>and convert to animated gif</p>
+<pre class="hljs"><code>cat *.png | ffmpeg -framerate 15 -f image2pipe -i - -vf format=yuv420p mos-halftone+.gif
+</code></pre>
+<p><img class="verticalimg" src="https://user-images.githubusercontent.com/59083599/140745862-b1ec818b-222c-46de-b706-0b7bb5cc7a66.gif" alt="mos-halftone+"></p>
+
+
 <h2>mosaicify a video</h2>
 <p>lets apply what we learned to a video, i have made a example of how to download a free video, make image sequence, apply filter and mux it back <a href="https://github.com/junguler/ffmpeg-examples/tree/main/sequence%2C%20manipulate%20%26%20mux%20images">here</a></p>
 <pre class="hljs"><code>for i in *.jpg ; do cp $i input.jpg ; python3 ~/git-stuff/mosaic/mosaic.py ; rm input.jpg ; mv output.svg $i.svg ; done 

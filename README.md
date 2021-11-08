@@ -266,4 +266,13 @@ and add this custom class to a paragraph
 ```
 and a paragraph that doesn't include this class will have a default and basic look
 
+### write in markdown and convert to html
+markdown is a very easy to write and style language that doesn't get in your way and it's extremely easy to write on, you can find some basic information on markdown formating on github [here ](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax) 
+
+now that we wrote our fist markdown page we use an amazing project call [markdown-it](https://markdown-it.github.io/) to convert it to html, keep in mind that this is only one way of converting markdown to html and there are many other ways to do it either in your ide or external websites
+
+copy your markdown text to the left side of the website and click source on the wirte side to copy the html text, copy it into an empty html page and lets add our usual start and end of every page to it and apply some css here and there where it doesn't look good and you already have a page styled and ready to go
+
+i'm using this method to easily convert my markdown tutorials to pages for my website that look like they belong and written from scratch
+
 #### more stuff will be added as i learn ...

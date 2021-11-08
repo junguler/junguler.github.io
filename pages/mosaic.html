@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="en">
+
+   <link href="../style.css" rel="stylesheet" type="text/css">
+
+   <div class="pagebody">
+
+<head>
+    <meta charset="utf-8">
+    <title>Junguler</title>
+    <link rel="shortcut icon" type="image/ico" href="../favicon.ico"/>
+
+</head>
+ <!-- 
+<img class="banner"  src="../stuff/p-banner.jpg" ><br>
+-->
+<nav>
+  <ul class="nav">
+    <li class="menu">
+      <a href="../index.html">Home</a></li>&nbsp;&nbsp;&nbsp;</a>
+    <li class="menu">
+      <a href="second.html">Projects</a>
+      <ul>
+      <li><a href="mosaic.html">Mosaic</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+<br> <br>  
+
+<body>
+<h2>what is needed to get started?</h2>
+<p>mosaic is a really amazing program that takes you input images and makes roman style mosaics out of them, find the github repo <a href="https://github.com/yobeatz/mosaic">here</a>
+and look <a href="https://towardsdatascience.com/how-to-generate-roman-style-mosaics-with-python-11d5aa021b09">here</a> for a post to goes in-depth on how the program was designed and works</p>
+<h2>source material</h2>
+<p>everything is downloaded from a royalty free image website <a href="https://free-images.com/">here</a> and some royalty free stock footage from youtube</p>
+<h2>explanation of the config and how the program works</h2>
+<p>customizing config is done by changing values in the <code>mosaic.py</code> file so we will make a copy of the original file to have an offline copy to be able to compare configs if there is need for it</p>
+<table>
+<thead>
+<tr>
+<th>config</th>
+<th>default</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>half_tile</td>
+<td>12</td>
+<td>half size of mosaic tile, between 4 and 30</td>
+</tr>
+<tr>
+<td>GAUSS</td>
+<td>3</td>
+<td>blurs image before edge detection, between 0 and 8</td>
+</tr>
+<tr>
+<td>EDGE_DETECTION</td>
+<td>‘HED’</td>
+<td>the method for edge detection, either ‘HED’ or ‘DiBlasi’</td>
+</tr>
+<tr>
+<td>WITH_FRAME</td>
+<td>True</td>
+<td>control about guidelines along image borders, either True or False</td>
+</tr>
+<tr>
+<td>RAND_SIZE</td>
+<td>0.3</td>
+<td>portion of tile size which is added or removed randomly during construction</td>
+</tr>
+<tr>
+<td>MAX_ANGLE</td>
+<td>40</td>
+<td>max construction angle for tiles along roundings, between 30 and 75</td>
+</tr>
+<tr>
+<td>GAP_CHAIN_SPACING</td>
+<td>0.5</td>
+<td>spacing of gap filler chains, between 0.4 and 1.0</td>
+</tr>
+<tr>
+<td>MAKE_CONVEX</td>
+<td>True</td>
+<td>break concave into more realistic polygons, either True or False</td>
+</tr>
+<tr>
+<td>COLOR_SCHEMA</td>
+<td>‘nilotic’</td>
+<td>leave empty to plot all available or choose from ‘wise_men’, ‘fish’, ‘cave_canem’, ‘nilotic’, ‘rooster’, ‘carpe_diem’, ‘Hyena’</td>
+</tr>
+</tbody>
+</table>
+<p>in the line <a href="https://github.com/yobeatz/mosaic/blob/main/mosaic.py#L15">15</a> of the ‘<a href="http://mosaic.py">mosaic.py</a>’ there is a line that decides the name of our input image,
+lets change it to <code>fname = r'input.jpg'</code> so we have a unified way of inputing our image to the program</p>
+<p>and we comment out lines <a href="https://github.com/yobeatz/mosaic/blob/main/mosaic.py#L33">33</a> and <a href="https://github.com/yobeatz/mosaic/blob/main/mosaic.py#L45">45</a> with # so the program only opens one gui window with our output image</p>
+<p>we also change the value of line <a href="https://github.com/yobeatz/mosaic/blob/main/mosaic.py#L96">96</a> from <code>return_svg=False</code> to <code>return_svg=True</code> so the program outputs an svg file for us on exit</p>
+<h2>showing how the program works in a visual way by showing each step an image goes thru</h2>
+<p>we commented out all of these steps except the final step but it might be a good idea to show them because the program goes thru all of them to make the final output file</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">step_1 original</th>
+<th style="text-align:center">step_2 edges</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><img src="https://user-images.githubusercontent.com/59083599/139756417-88d74dec-c385-40c1-96be-bc5e0f61fcdd.jpg" alt="original"></td>
+<td style="text-align:center"><img src="https://user-images.githubusercontent.com/59083599/139756486-c7ab5cb8-c6e5-4914-bb2e-cdaf4758d317.jpg" alt="edges"></td>
+</tr>
+<tr>
+<td style="text-align:center">step_3 distances</td>
+<td style="text-align:center">step_4 guidelines</td>
+</tr>
+<tr>
+<td style="text-align:center"><img src="https://user-images.githubusercontent.com/59083599/139756544-172c8a6e-96a0-4803-9ac4-3b77ff0954c9.jpg" alt="distances"></td>
+<td style="text-align:center"><img src="https://user-images.githubusercontent.com/59083599/139756621-e742efea-9110-4fbe-9a31-a457edbf3035.jpg" alt="guidelines"></td>
+</tr>
+<tr>
+<td style="text-align:center">step_5 gradient</td>
+<td style="text-align:center">step_6 angles_0to180</td>
+</tr>
+<tr>
+<td style="text-align:center"><img src="https://user-images.githubusercontent.com/59083599/139756673-332c1325-7548-451e-b15b-a76ed4386289.jpg" alt="gradient"></td>
+<td style="text-align:center"><img src="https://user-images.githubusercontent.com/59083599/139756875-479d0bb9-e321-42c4-a445-a12b8290622c.jpg" alt="angles_0to180"></td>
+</tr>
+<tr>
+<td style="text-align:center">step_7 polygons_chains</td>
+<td style="text-align:center">step_8 used_up_space</td>
+</tr>
+<tr>
+<td style="text-align:center"><img src="https://user-images.githubusercontent.com/59083599/139756942-598077c7-46da-4647-9266-c9a24c174702.jpg" alt="polygons_chains"></td>
+<td style="text-align:center"><img src="https://user-images.githubusercontent.com/59083599/139756980-038e8162-07b3-46c7-a8b3-7784d4e9219f.jpg" alt="used_up_space"></td>
+</tr>
+<tr>
+<td style="text-align:center">step_9 distance_to_tile</td>
+<td style="text-align:center">step_10 filler_guidelines</td>
+</tr>
+<tr>
+<td style="text-align:center"><img src="https://user-images.githubusercontent.com/59083599/139779737-fcdce48e-c083-406d-a534-4425119ea49e.jpg" alt="distance_to_tile"></td>
+<td style="text-align:center"><img src="https://user-images.githubusercontent.com/59083599/139757111-704bd4bd-79d1-47da-9c5a-9601a1fc25a4.jpg" alt="filler_guidelines"></td>
+</tr>
+<tr>
+<td style="text-align:center">step_11 polygons_filler</td>
+<td style="text-align:center">step_12 polygons_cut</td>
+</tr>
+<tr>
+<td style="text-align:center"><img src="https://user-images.githubusercontent.com/59083599/139757184-eaa9a2b5-fe46-42de-ba00-cb956ec9e1e6.jpg" alt="polygons_filler"></td>
+<td style="text-align:center"><img src="https://user-images.githubusercontent.com/59083599/139757242-8fc8ed37-8d88-411c-bd33-4a1e9d10c7c5.jpg" alt="polygons_cut"></td>
+</tr>
+<tr>
+<td style="text-align:center">step_13 final</td>
+<td style="text-align:center">step_14 final_recolored ‘fish’</td>
+</tr>
+<tr>
+<td style="text-align:center"><img src="https://user-images.githubusercontent.com/59083599/139757302-d3857b0f-0969-42b8-8eb3-b1acff47c4d8.jpg" alt="final"></td>
+<td style="text-align:center"><img src="https://user-images.githubusercontent.com/59083599/139758088-fd89f475-0b9a-4d89-a4d6-b7d0df0c959b.jpg" alt="final_recolored"></td>
+</tr>
+</tbody>
+</table>
+<h2>basic usage</h2>
+<p>the way the program works is it opens a gui window that lets you change some settings and output an image from it too, we are mostly interested in re-creating the same effect multiple times so we changed the default settings so the program outputs a svg file for us named ‘output.svg’ so we close the window as soon as it opens and the output file gets generated, just cd into the folder you have your image on and rename it to <code>input.jpg</code> and run the program</p>
+<pre class="hljs"><code>python3 ~/git-stuff/mosaic/mosaic.py
+</code></pre>
+<p>because we are on a different folder than <code>mosaic.py</code> is we need to pass it’s full path to our shell, now convert the svg file to png specifing it’s width to be 1280 pixels for this example</p>
+<pre class="hljs"><code>ffmpeg -i output.svg -vf scale=1280:-1 mos-eiffel.png
+</code></pre>
+<p><img src="https://user-images.githubusercontent.com/59083599/139759167-605d88fe-7305-4d90-ba4f-6c2b8ae91fa0.png" alt="mos-eiffel"></p>
+<p>another example</p>
+<p><img src="https://user-images.githubusercontent.com/59083599/139759442-5002def3-1dac-4fc2-950a-e8e140825331.png" alt="mos-baloon"></p>
+<h2>change tile size</h2>
+<p>so far we’ve been using the default size of 12 for tile sizes, lets use a smaller size of 6 for this, change the value in the <code>mosaic.py</code> to <code>half_tile = 6</code></p>
+<p><img src="https://user-images.githubusercontent.com/59083599/139760213-f701610c-8120-4246-b71b-66bf9690ea87.png" alt="mos-road"></p>
+<p>now with 4 which is te lowest value possible, this takes quite a bit longer to make too since the program seems to be only using one core of my cpu</p>
+<p><img class="verticalimg" src="https://user-images.githubusercontent.com/59083599/139763287-0a0abbbe-f023-435d-9a87-cba78f04392f.png" alt="mos-mime"></p>
+<p>note because our image is vertical we change our ffmpeg command to set for 720 pixels for it’s height</p>
+<pre class="hljs"><code>ffmpeg -i output.svg -vf scale=-1:720 mos-mime.png
+</code></pre>
+<p>setting the number higher than the default 12 (16 for this example) we use an image that can afford to lose most of it’s details and still be recognizable</p>
+<p><img src="https://user-images.githubusercontent.com/59083599/139851339-5031d4c9-fda0-4657-a73a-04c1628c6bcb.jpg" alt="mos-fire"></p>
+<p>comparing different tile sizes with the same image</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">original</th>
+<th style="text-align:center">half_tile = 6</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><img src="https://user-images.githubusercontent.com/59083599/139945917-6a6de556-6044-4bb8-b31a-84b916fa7c66.jpg" alt="original"></td>
+<td style="text-align:center"><img src="https://user-images.githubusercontent.com/59083599/139945953-c6d76750-8ada-45ac-bd02-4d08911321bb.jpg" alt="wm-6"></td>
+</tr>
+<tr>
+<td style="text-align:center">half_tile = 12</td>
+<td style="text-align:center">half_tile = 20</td>
+</tr>
+<tr>
+<td style="text-align:center"><img src="https://user-images.githubusercontent.com/59083599/139946050-7b5f7b37-d3fa-43cd-a2ed-6f4481e5aada.jpg" alt="wm-12"></td>
+<td style="text-align:center"><img src="https://user-images.githubusercontent.com/59083599/139946110-35821dff-1bbc-420d-bab1-1e35282d6ff7.jpg" alt="wm-20"></td>
+</tr>
+</tbody>
+</table>
+<h2>respecting frame of the image</h2>
+<p>by default mosaic aligns the tiles starting at the edges of the screen and then comes to the middle, if we set this option to false the tiles are aligned at the border of the objects inside our image, let’s show both side by side</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">WITH_FRAME = True</th>
+<th style="text-align:center">WITH_FRAME = False</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><img src="https://user-images.githubusercontent.com/59083599/139770158-df4024b0-3855-4ff8-8fbe-68693ea1d22d.png" alt="moon-frame"></td>
+<td style="text-align:center"><img src="https://user-images.githubusercontent.com/59083599/139770247-2f1621e9-cd3e-4276-9b04-d1da3b3d8707.png" alt="moon-no-frame"></td>
+</tr>
+</tbody>
+</table>
+<h2>changing tile angles</h2>
+<p>set the maximum degree a tile is able to rotate to create the image (default value is 40), higher value produces smoother image with less tiles</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">MAX_ANGLE = 30</th>
+<th style="text-align:center">MAX_ANGLE = 75</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><img src="https://user-images.githubusercontent.com/59083599/139771255-7f62209d-b3bd-4d65-a514-240c196ad87e.png" alt="30"></td>
+<td style="text-align:center"><img src="https://user-images.githubusercontent.com/59083599/139771290-7d48c002-b17c-4b8d-94bc-435a75d199d9.png" alt="75"></td>
+</tr>
+</tbody>
+</table>
+<h2>randomize tile placement</h2>
+<p>by default mosaic applies <code>RAND_SIZE = 0.3</code> randomization to placement of tiles, lets change that for comparison</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">RAND_SIZE = 0.3</th>
+<th style="text-align:center">RAND_SIZE = 3.0</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><img src="https://user-images.githubusercontent.com/59083599/139958096-e9e584b9-1151-4b78-a63c-fb110351e675.png" alt="random-0-3"></td>
+<td style="text-align:center"><img src="https://user-images.githubusercontent.com/59083599/139958637-a304125a-4e8d-4932-8954-ba157ba604ff.png" alt="random-3-0"></td>
+</tr>
+</tbody>
+</table>
+<h2>change edge detection mode</h2>
+<p>the default edge detection method mosaic uses is HED but there is an alternative called DiBlasi, here is how they look compared to each other</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">EDGE_DETECTION = ‘HED’</th>
+<th style="text-align:center">EDGE_DETECTION = ‘DiBlasi’</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><img src="https://user-images.githubusercontent.com/59083599/139771969-e49c3741-7f71-4001-a4ee-5e00c0e1c1c5.png" alt="HED"></td>
+<td style="text-align:center"><img src="https://user-images.githubusercontent.com/59083599/139771984-e2c8834d-fd99-4bd6-98f3-1faf78695f2c.png" alt="DiBlasi"></td>
+</tr>
+</tbody>
+</table>
+<h2>recoloring our output image</h2>
+<p>mosaic is able to apply recoloring to our converted images, lets showcase them with a colorful image</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">normal</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><img src="https://user-images.githubusercontent.com/59083599/139965688-ae01fa75-6d7d-45a0-8319-d1bb11af0eed.jpeg" alt="t-nomal_colors"></td>
+</tr>
+<tr>
+<td style="text-align:center">wise_men</td>
+</tr>
+<tr>
+<td style="text-align:center"><img src="https://user-images.githubusercontent.com/59083599/139965722-ff63f22b-89ef-48ac-95b9-a191e0ae5441.jpeg" alt="t-wise_man"></td>
+</tr>
+<tr>
+<td style="text-align:center">fish</td>
+</tr>
+<tr>
+<td style="text-align:center"><img src="https://user-images.githubusercontent.com/59083599/139965808-627653c5-35df-4fda-b3ff-aab8e4d54a51.jpeg" alt="t-fish"></td>
+</tr>
+<tr>
+<td style="text-align:center">cave_canem</td>
+</tr>
+<tr>
+<td style="text-align:center"><img src="https://user-images.githubusercontent.com/59083599/139965838-8d33d3dc-6103-45cc-971a-abdce5529a1d.jpeg" alt="t-cave_canem"></td>
+</tr>
+<tr>
+<td style="text-align:center">nilotic</td>
+</tr>
+<tr>
+<td style="text-align:center"><img src="https://user-images.githubusercontent.com/59083599/139965859-1cb7d13e-f737-4377-be40-b23d41c35683.jpeg" alt="t-nilotic"></td>
+</tr>
+<tr>
+<td style="text-align:center">rooster</td>
+</tr>
+<tr>
+<td style="text-align:center"><img src="https://user-images.githubusercontent.com/59083599/139965890-2faa4e40-4294-4731-8608-3b144f29bdab.jpeg" alt="t-rooster"></td>
+</tr>
+<tr>
+<td style="text-align:center">carpe_diem</td>
+</tr>
+<tr>
+<td style="text-align:center"><img src="https://user-images.githubusercontent.com/59083599/139965937-12ef191c-2f1c-4536-98ad-e433e198ca8a.jpeg" alt="t-carpe_diem"></td>
+</tr>
+<tr>
+<td style="text-align:center">Hyena</td>
+</tr>
+<tr>
+<td style="text-align:center"><img src="https://user-images.githubusercontent.com/59083599/139965967-cdd7f058-005e-415f-9b3e-d836e233a49a.jpeg" alt="t-Hyena"></td>
+</tr>
+</tbody>
+</table>
+<h2>mosaicify a video</h2>
+<p>lets apply what we learned to a video, i have made a example of how to download a free video, make image sequence, apply filter and mux it back <a href="https://github.com/junguler/ffmpeg-examples/tree/main/sequence%2C%20manipulate%20%26%20mux%20images">here</a></p>
+<pre class="hljs"><code>for i in *.jpg ; do cp $i input.jpg ; python3 ~/git-stuff/mosaic/mosaic.py ; rm input.jpg ; mv output.svg $i.svg ; done 
+</code></pre>
+<p>first we assign every jpg file to our for loop, duplicate them one by one and name them input.jpg, convert the image using mosaic and remove the duplicated file and finally rename output.svg to the same name as our initial input so it’s not overwritten by the next output file. note that you have to manually close the gui window each time as i don’t know enough python to make this automatic</p>
+<p>now that we have our image sequemce converted and in svg format lets convert it to png setting it’s width to 1280 pixels</p>
+<pre class="hljs"><code>for i in *.svg ; do ffmpeg -i $i -vf scale=1280:-1 o-$i.png ; done 
+</code></pre>
+<p>and convert to a video</p>
+<pre class="hljs"><code>cat o-*.png | ffmpeg -framerate 20 -f image2pipe -i - mosaic-liberty.mp4
+</code></pre>
+<video controls loop>
+  <source src="https://user-images.githubusercontent.com/59083599/139774925-d6aff776-6e83-485f-b6fb-76d069b7aff4.mp4" type="video/mp4">
+</video>
+<p>another example with randomized tile placement</p>
+<video controls loop>
+  <source src="https://user-images.githubusercontent.com/59083599/140249243-f8eeb164-4dda-4511-8d0c-fb03c2f84e68.mp4" type="video/mp4">
+</video>
+
+
+<p id="down"></p>
+
+<br><br><br>
+<footer class="footer2">
+    Page is converted from markdown to html by Markdown-it, Look <a class="linkyel" href="https://markdown-it.github.io/"">here</a>  for more information
+</footer>
+
+<a class="up" href="#"><img src="../stuff/up.png"></a>
+
+<a class="down" href="#down"><img src="../stuff/down.png"></a>

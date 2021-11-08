@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="en">
+
+   <link href="../style.css" rel="stylesheet" type="text/css">
+
+   <div class="pagebody">
+
+<head>
+    <meta charset="utf-8">
+    <title>Junguler</title>
+    <link rel="shortcut icon" type="image/ico" href="../favicon.ico"/>
+
+</head>
+ <!-- 
+<img class="banner"  src="../stuff/p-banner.jpg" ><br>
+-->
+<nav>
+  <ul class="nav">
+    <li class="menu">
+      <a href="../index.html">Home</a></li>&nbsp;&nbsp;&nbsp;</a>
+    <li class="menu">
+      <a href="second.html">Projects</a>
+      <ul>
+        <li><a href="asciipy.html">Asciipy</a></li>
+        <li><a href="asciimagec.html">Ascii img</a></li>
+        <li><a href="gmic.html">G'mic</a></li>
+        <li><a href="geometrize.html">Geometrize</a></li>
+        <li><a href="mosaic.html">Mosaic</a></li>
+        <li><a href="primitive.html">Primitive</a></li>
+        <li><a href="tiler.html">Tiler</a></li>
+        <li><a href="triangle.html">Triangle</a></li>
+        <li><a href="triangula.html">Triangula</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+<br> <br> 
+
+<body>
+
+<h1>Tiler</h1>
+
+<h2>what is needed to get started?</h2>
+<p>tiler is a cool and amazing python cli programs that uses small pictures (tiles) to recreate pictures in those styles, find the github repo <a href="https://github.com/nuno-faria/tiler">here</a> and read about how to install it</p>
+
+<h2>source material</h2>
+<p>everything is downloaded from a royalty free image website <a href="https://free-images.com/">here</a> and some royalty free stock footage from youtube</p>
+<h2>explanation of the config file and how the program works</h2>
+<p>customizing config is done by changing values in the <code>conf.py</code> and there is two different sections for changing config, one is for <code>gen_tiles.py</code> which is for making custom color varients of our tiles and <code>tiler.py</code> which is the main part of program that converts our images</p>
+<table>
+<thead>
+<tr>
+<th>config</th>
+<th>default</th>
+<th>gen_tiles.py</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DEPTH</td>
+<td>DEPTH = 4</td>
+<td>number of divisions in each color channel (ex: DEPTH = 4 -&gt; 4 * 4 * 4 = 64 colors)</td>
+</tr>
+<tr>
+<td>ROTATIONS</td>
+<td>ROTATIONS = [0]</td>
+<td>list of rotations, in degrees, to apply over the original image (ex: [0, 90])</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>config</th>
+<th>default</th>
+<th>tiler.py</a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>COLOR_DEPTH</td>
+<td>COLOR_DEPTH = 32</td>
+<td>number of divisions in each color channel (ex: COLOR_DEPTH = 4 -&gt; 4 * 4 * 4 = 64 colors)</td>
+</tr>
+<tr>
+<td>RESIZING_SCALES</td>
+<td>RESIZING_SCALES = [0.5, 0.4, 0.3, 0.2, 0.1]</td>
+<td>scale to apply to each tile (ex: [1, 0.75, 0.5, 0.25])</td>
+</tr>
+<tr>
+<td>PIXEL_SHIFT</td>
+<td>PIXEL_SHIFT = (5, 5)</td>
+<td>number of pixels shifted to create each box (ex: (5,5)); if None, shift will be the same as the tile dimension)</td>
+</tr>
+<tr>
+<td>OVERLAP_TILES</td>
+<td>OVERLAP_TILES = False</td>
+<td>if tiles can overlap</td>
+</tr>
+<tr>
+<td>RENDER</td>
+<td>RENDER = False</td>
+<td>render image as its being built</td>
+</tr>
+<tr>
+<td>POOL_SIZE</td>
+<td>POOL_SIZE = 8</td>
+<td>multiprocessing pool size</td>
+</tr>
+<tr>
+<td>IMAGE_TO_TILE</td>
+<td>OUT = ‘out.png’</td>
+<td>image to tile (ignored if passed as the 1st arg)</td>
+</tr>
+<tr>
+<td>TILES_FOLDER</td>
+<td>IMAGE_TO_TILE = None</td>
+<td>folder with tiles (ignored if passed as the 2nd arg)</td>
+</tr>
+<tr>
+<td>OUT</td>
+<td>TILES_FOLDER = None</td>
+<td>result image filename</td>
+</tr>
+</tbody>
+</table>
+<h2>basic usage</h2>
+<p>the repo of program comes with some examples of tiles already, lets use them to show how the program works and then we can get to making custom shapes</p>
+<pre class="hljs"><code>python3 tiler.py bird.jpg tiles/plus/gen_plus/
+</code></pre>
+<p>first we tell our shell tiler is a python3 program, and import our image to be converted and finally choose the tiling effect of plus signs</p>
+<p><img src="https://user-images.githubusercontent.com/59083599/137897304-86e6ec25-84bd-40b2-9fe3-3bdc0a3af951.jpg" alt="bird-tiled"></p>
+<pre class="hljs"><code>python3 tiler.py sun.jpg tiles/times/gen_times/
+</code></pre>
+<p><img src="https://user-images.githubusercontent.com/59083599/137898424-0f8e6f07-3b33-40d3-9551-68bc0ca93430.jpg" alt="sun-tiled"></p>
+<h2>unifromed output</h2>
+<p>so far we’ve been using the default option of <code>PIXEL_SHIFT = (5, 5)</code> which alows for for each pixel to be shifted 5 pixels in x and y axis which lets our image have empty spots and un uniformed shapes, setting this value to None <code>PIXEL_SHIFT = None</code> in our <code>conf.py</code> makes everything uniform and also greatly speeds up our conversion speeds</p>
+<pre class="hljs"><code>python3 tiler.py window.jpg tiles/circles/gen_circle_100/
+</code></pre>
+<p><img src="https://user-images.githubusercontent.com/59083599/137899308-3cc966a6-4122-475e-9853-e4605ef812d0.jpg" alt="window-tiled"></p>
+<pre class="hljs"><code>python3 tiler.py ladyLiberty.jpg tiles/waves/gen_wave/
+</code></pre>
+<p><img src="https://user-images.githubusercontent.com/59083599/137900389-43db6d93-986d-468e-a13a-2cbe5b4a20cf.jpg" alt="ladyLiberty-tiled"></p>
+<h2>using multiple tile types</h2>
+<p>this is very easy, just copy everything you like into a folder, lets do this image with plus and times shapes, make a new folder called combo for example, copy evertyhing from the tiles/plus/gen_plus/ and tiles/times/gen_times/ into our combo folder</p>
+<pre class="hljs"><code>python3 tiler.py rhino.jpg tiles/combo/
+</code></pre>
+<p><img src="https://user-images.githubusercontent.com/59083599/137902311-8e78bece-81ee-489c-aaf9-0add9d19695e.jpg" alt="rhino-tiled"></p>
+<p>vertical and horizontal lines</p>
+<pre class="hljs"><code>python3 tiler.py rug.jpg tiles/combo2/
+</code></pre>
+<p><img src="https://user-images.githubusercontent.com/59083599/137903375-06676921-98bc-4b15-a3ee-5eb574ea66be.jpg" alt="rug-tiled"></p>
+<h2>making custom tiles</h2>
+<p>before i start showing examples of how to make custom tiles first i want to explain some details to let you create good tiles, first of all we need a transparent png file and our shape needs to have an RGB color of (240,240,240) which is almost completely white.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">good</th>
+<th style="text-align:center">bad</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><img src="https://user-images.githubusercontent.com/59083599/137913059-75905a8f-62b2-44dd-807c-415294e3a469.png" alt="g1"></td>
+<td style="text-align:center"><img src="https://user-images.githubusercontent.com/59083599/137913098-0d8d0099-0b4f-4594-8a51-34a560fb0289.png" alt="b1"></td>
+</tr>
+</tbody>
+</table>
+<p>your tile should be one big mass instead of many pieces</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">good</th>
+<th style="text-align:center">bad</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><img src="https://user-images.githubusercontent.com/59083599/137913938-6fd20824-d2ec-4775-ac5b-335073c48dd5.png" alt="g2"></td>
+<td style="text-align:center"><img src="https://user-images.githubusercontent.com/59083599/137913959-5f4c5434-9e35-41d4-84d6-15bfe1091291.png" alt="b2"></td>
+</tr>
+</tbody>
+</table>
+<p>your tile should surpass all sides of your frame and not be floating inside</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">good</th>
+<th style="text-align:center">bad</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><img src="https://user-images.githubusercontent.com/59083599/137914443-298a1b51-ba5b-45a6-8f22-c6340ccc647e.png" alt="g3"></td>
+<td style="text-align:center"><img src="https://user-images.githubusercontent.com/59083599/137914464-69ca09db-5c8f-44e9-bce7-abd2b949478f.png" alt="b3"></td>
+</tr>
+</tbody>
+</table>
+<p>and finally your tile should occupy the whole frame and not leave empty spaces</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">good</th>
+<th style="text-align:center">bad</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><img src="https://user-images.githubusercontent.com/59083599/137914978-1c33ed74-6712-4821-b6e4-81fe49990fbd.png" alt="g4"></td>
+<td style="text-align:center"><img src="https://user-images.githubusercontent.com/59083599/137924695-0de7ce17-bebb-464a-9948-4e88fc2ec0e1.png" alt="b4"></td>
+</tr>
+</tbody>
+</table>
+<p>note: i added the black background for people who use the github’s light theme to be able to easily see, our shape png has to be transparent for the best result</p>
+<h2>using custom tiles</h2>
+<p>now that we made our custom tiles, taking above explanations into consideration let’s use the <code>gen_tiles.py</code> program to make other color varients of it.</p>
+<pre class="hljs"><code>python3 gen_tiles.py tiles/custom/tile1.png
+</code></pre>
+<p>this makes a folder named <code>gen_tile1</code> in the folder our <code>tile1.png</code> is with variations of colors and black to white saturations of our original tile, now lets use this folder to make a tiled picture</p>
+<p><img class="verticalimg" src="https://user-images.githubusercontent.com/59083599/137919877-4f269735-3697-4ea2-bc90-eb016629229e.png" alt="A"></p>
+<pre class="hljs"><code>python3 tiler.py snow.jpg tiles/custom/gen_tile1/
+</code></pre>
+<p><img src="https://user-images.githubusercontent.com/59083599/137917805-21e47039-ee5c-44f5-9153-4aec3fecfc3c.jpg" alt="snow-tiled"></p>
+<p>lets make another example, this time i make a copy of my tile and turn it 90 degrees to either side to have vertical and horizontal shapes, use <code>gen_tiles.py</code> on each of them and put the results into a folder to have combined effect, we could also use the <code>ROTATIONS = [0]</code> option in <code>conf.py</code> and change it’s value to <code>ROTATIONS = [90]</code> after we ran it with the default setting to achieve the same result without making duplicate files.</p>
+<p><img class="verticalimg" src="https://user-images.githubusercontent.com/59083599/137919926-30e97115-8aba-47d8-850b-e9545dc5bd21.png" alt="B"> <img class="verticalimg" src="https://user-images.githubusercontent.com/59083599/137919941-783027e6-1fcb-471b-85f4-5ac5e0abe9a5.png" alt="C"></p>
+<pre class="hljs"><code>python3 tiler.py flower.jpg tiles/custom2/gen_tile+/
+</code></pre>
+<p><img src="https://user-images.githubusercontent.com/59083599/137919484-901b651c-d6d2-496f-95d1-2673cf77a38c.jpg" alt="flower-tiled"></p>
+<h2>change resizing scale</h2>
+<p>so far we’ve been using the default resizing scale settings of <code>RESIZING_SCALES = [0.5, 0.4, 0.3, 0.2, 0.1]</code> scale of 1 is the exact size of our tile image, so with default settings we are using from 50% of the tile size to 10% of it. lets use it again for comparasion purposes and then change it:</p>
+<pre class="hljs"><code>python3 tiler.py burger.jpg tiles/circles/gen_circle_100/
+</code></pre>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">default</th>
+<th style="text-align:center">[0.7, 0.6, 0.5, 0.4]</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><img src="https://user-images.githubusercontent.com/59083599/137949566-3dd47348-5e12-42a4-ae5e-05848888f9f5.jpg" alt="burger-tiled"></td>
+<td style="text-align:center"><img src="https://user-images.githubusercontent.com/59083599/137949618-2c65032b-8b47-40c0-8708-717a022a51be.jpg" alt="burger-tiled-resize"></td>
+</tr>
+</tbody>
+</table>
+<h2>overlap tiles</h2>
+<p>by default tiles are not set to overlap but this can be change by setting <code>OVERLAP_TILES = False</code> to <code>True</code></p>
+<pre class="hljs"><code>python3 tiler.py tomato.jpg tiles/clips/gen_clip/
+</code></pre>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">default</th>
+<th style="text-align:center">with overlap</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><img src="https://user-images.githubusercontent.com/59083599/137952016-956bf32d-7933-4440-9186-ea05295689fe.jpg" alt="tomato-tiled"></td>
+<td style="text-align:center"><img src="https://user-images.githubusercontent.com/59083599/137952042-87d033ea-83d5-489d-87eb-ce7b3aeb662c.jpg" alt="tomato-tiled-overlap"></td>
+</tr>
+</tbody>
+</table>
+<h2>changing colors</h2>
+<p>by default every image is rendered with 32 colors <code>COLOR_DEPTH = 32</code> lets change that</p>
+<pre class="hljs"><code>python3 tiler.py colors.jpg tiles/clips/gen_clip/
+</code></pre>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">default</th>
+<th style="text-align:center">8 colors</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><img src="https://user-images.githubusercontent.com/59083599/137954796-ed883959-5b78-447b-88eb-a8b523416bcf.jpg" alt="colors-tiled"></td>
+<td style="text-align:center"><img src="https://user-images.githubusercontent.com/59083599/137954818-98b37cba-daa9-40df-8fc3-ed21a145f2a8.jpg" alt="colors-tiled-8colors"></td>
+</tr>
+</tbody>
+</table>
+<h2>tilify a video</h2>
+<p>lets apply what we learned to a video, i have made a example of how to download a free video, make image sequence, apply filter and mux it back <a href="https://github.com/junguler/ffmpeg-examples/tree/main/sequence%2C%20manipulate%20%26%20mux%20images">here</a></p>
+<pre class="hljs"><code>for i in *.jpg ; do python3 ~/git-stuff/tiler/tiler.py $i ~/git-stuff/tiler/tiles/waves/gen_wave/ ; mv out.png T-$i.png ; done  
+</code></pre>
+<p>because we are not in the folder <a href="http://tiler.py">tiler.py</a> is, we need to pass it’s complete path for the shell to know where it is, we should also change the name of output files because the program always outpots images as <code>out.png</code> and if we didn’t change them they would have been overwritten</p>
+<p>and mux the images</p>
+<pre class="hljs"><code>cat T-image-000*.png | ffmpeg -framerate 30 -f image2pipe -i - -b:v 8M -preset veryslow tiled_dance.mp4
+</code></pre>
+<p><a href="https://user-images.githubusercontent.com/59083599/138157868-bd05d629-0d13-4ec9-b0e1-7452cace5c70.mp4">https://user-images.githubusercontent.com/59083599/138157868-bd05d629-0d13-4ec9-b0e1-7452cace5c70.mp4</a></p>
+<p>clip was taken from a royalty free video in <a href="https://odysee.com/@dirtyworkz:0/prdx-phoenix-(official-video)-copyright:e">odysee</a></p>
+<p>we also applied some compression to our video clip <code>-b:v 8M</code> to prevent big output sizes and use a very slow preset to preserve as much deatails as possible <code>-preset veryslow</code></p>
+<h2>make animated gif out of one picture</h2>
+<p>tiler doesn’t have randomization in itself but we can apply rotations to <code>conf.py</code> when we use the <code>gen_tiles.py</code> to make different roations of our tiles, lets convert this image with <code>ROTATIONS = [0]</code> and convert the image, then do it with <code>[90]</code> <code>[180]</code> <code>[270]</code> and convert the image each time and rename it, note we remove the colored tiles <code>gen_tiles.py</code> makes with each conversion but we could have just added the shapes together to make more frames</p>
+<pre class="hljs"><code>python3 gen_tiles.py tiles/gif/gif.png
+</code></pre>
+<p>and convert</p>
+<pre class="hljs"><code>python3 tiler.py watch.jpg tiles/gif/gen_gif
+</code></pre>
+<p>now that we have our 4 images, lets make an animted gif out of it</p>
+<pre class="hljs"><code>cat 01.png 02.png 03.png 04.png | ffmpeg -framerate 6 -f image2pipe -i - tiled_watch.gif
+</code></pre>
+<p><img src="https://user-images.githubusercontent.com/59083599/137982799-c09916cd-3dff-448c-a9ac-224d47c886fc.gif" alt="tiled_watch"></p>
+<h2>make gif by changing colors</h2>
+<p>another example of making a gif file is by changing the colors of our input images, lets use ffmpeg’s hue filter for this, and iterate thru 360 degrees of hue</p>
+<pre class="hljs"><code>for h in {10..360..10} ; do ffmpeg -i city.jpg -vf hue=h=$h $h.jpg ; done
+</code></pre>
+<p><code>{10..360..10}</code> our starting hue rotation value is 10 and our ending value is 360 because 0 and 360 are the same value, the 10 at the end tells to our shell that skip every 10 numbers and only do, 10, 20, 30 etc to 360, these generated numbers in our for loop are being passed to <code>hue=h=</code> which applies the filter and we also use these to generate the output file names, now lets convert our newly generated images</p>
+<p><img src="https://user-images.githubusercontent.com/59083599/138005786-f775dd6b-8e05-4f3f-8ceb-b0d7011a28ed.gif" alt="city+"></p>
+<pre class="hljs"><code>for i in *.jpg ; do python3 ~/git-stuff/tiler/tiler.py $i ~/git-stuff/tiler/tiles/times/gen_times ; mv out.png T-$i.png ; done 
+</code></pre>
+<p>and mux the images to make a gif file</p>
+<pre class="hljs"><code>cat $( ls -v T-*.png ) | ffmpeg -framerate 10 -f image2pipe -i - tiled_city+.gif
+</code></pre>
+<p>because some of our images have two digits and some have 3 digits we use ls with cat because cat by default doesn’t sort numerically.</p>
+<p><img src="https://user-images.githubusercontent.com/59083599/138005707-b9349fb4-3c36-4441-a3bb-964ed2a46fd7.gif" alt="tiled_city"></p>
+<p>there are many other ways to make an animated gifs in programs like tiler that don’t have any randomizations, including rotating the picture converting it and rotting it back, changing resoultions of the pictures, changing shape sizes and pixel_shift and a bunch of other stuff, everything that is considered a change can result in a new outpot image …</p>
+
+<p id="down"></p>
+
+<br><br><br>
+<footer class="footer2">
+    Page is converted from markdown to html by Markdown-it, Look <a class="linkyel" href="https://markdown-it.github.io/"">here</a>  for more information
+</footer>
+
+<a class="up" href="#"><img src="../stuff/up.png"></a>
+
+<a class="down" href="#down"><img src="../stuff/down.png"></a>

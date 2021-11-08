@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+
+   <link href="../style.css" rel="stylesheet" type="text/css">
+
+   <div class="pagebody">
+
+<head>
+    <meta charset="utf-8">
+    <title>Junguler</title>
+    <link rel="shortcut icon" type="image/ico" href="../favicon.ico"/>
+
+</head>
+ <!-- 
+<img class="banner"  src="../stuff/p-banner.jpg" ><br>
+-->
+<nav>
+  <ul class="nav">
+    <li class="menu">
+      <a href="../index.html">Home</a></li>&nbsp;&nbsp;&nbsp;</a>
+    <li class="menu">
+      <a href="second.html">Projects</a>
+      <ul>
+        <li><a href="asciipy.html">Asciipy</a></li>
+        <li><a href="asciimagec.html">Ascii img</a></li>
+        <li><a href="gmic.html">G'mic</a></li>
+        <li><a href="geometrize.html">Geometrize</a></li>
+        <li><a href="mosaic.html">Mosaic</a></li>
+        <li><a href="primitive.html">Primitive</a></li>
+        <li><a href="tiler.html">Tiler</a></li>
+        <li><a href="triangle.html">Triangle</a></li>
+        <li><a href="triangula.html">Triangula</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+<br> <br> 
+
+<body>
+
+<h1>Ascii-image-converter</h1>
+
+<h2>what is needed to get started?</h2>
+<p>ascii-image-converter is a cli program that takes your image(s) make cool looking ascii art out of them on the terminal and externally. find the github repo <a href="https://github.com/TheZoraiz/ascii-image-converter">here</a> download the binary version for your os <a href="https://github.com/TheZoraiz/ascii-image-converter/releases/tag/v1.11.0">here</a> put it in your @PATH and open the terminal. this program is mainly designed to output the ascii art in the terminal but i’m more interested in getting external outputs from it, check the <a href="https://github.com/TheZoraiz/ascii-image-converter/blob/master/README.md">README.md</a> of the original repo for more detailed visual representation of the program in the terminal</p>
+<p>special thanks to <a href="https://github.com/TheZoraiz">Zoraiz Hassan</a> for making this great program and including options i wanted in it ❤️</p>
+
+<h2>source material</h2>
+<p>everything is downloaded from a royalty free image website <a href="https://free-images.com/">here</a> and some royalti free stock footage from youtube</p>
+<h2>explanation of the switches and how the program works</h2>
+<table>
+<thead>
+<tr>
+<th>Flag</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>-C</code>, <code>--color</code></td>
+<td>display and output with colors from original image</td>
+</tr>
+<tr>
+<td><code>-b</code>, <code>--braille</code></td>
+<td>use braille characters instead of ascii</td>
+</tr>
+<tr>
+<td><code>--threshold</code></td>
+<td>set threshold value to compare for braille art when converting each pixel into a dot</td>
+</tr>
+<tr>
+<td><code>--dither</code></td>
+<td>apply dithering on image to make braille art more visible</td>
+</tr>
+<tr>
+<td><code>--color-bg</code></td>
+<td>if any of the coloring flags is passed, this flag will transfer its color to each character’s background. instead of foreground. However, this option isn’t available for --save-img and --save-gif</td>
+</tr>
+<tr>
+<td><code>-d</code>, <code>--dimensions</code></td>
+<td>set the width and height for ascii art in CHARACTER lengths, for example: --dimensions width,height like this: -d 60,30</td>
+</tr>
+<tr>
+<td><code>-W</code>, <code>--width</code></td>
+<td>set width of ascii art. Height is calculated according to aspect ratio</td>
+</tr>
+<tr>
+<td><code>-H</code>, <code>--height</code></td>
+<td>set height of ascii art. Width is calculated according to aspect ratio</td>
+</tr>
+<tr>
+<td><code>-m</code>, <code>--map</code></td>
+<td>pass a string of your own ascii characters to map against, it must start from darkest character and end with lightest, there is no limit to number of characters, here is an example of a 7 character string: -m &quot; .-=+#@&quot;</td>
+</tr>
+<tr>
+<td><code>-g</code>, <code>--grayscale</code></td>
+<td>display and outpot ascii art in grayscale colors</td>
+</tr>
+<tr>
+<td><code>-n</code>, <code>--negative</code></td>
+<td>display and outpot ascii art in negative colors</td>
+</tr>
+<tr>
+<td><code>-c</code>, <code>--complex</code></td>
+<td>print the image with a wider array of ascii characters for more detailed lighting density, sometimes improves accuracy</td>
+</tr>
+<tr>
+<td><code>-f</code>, <code>--full</code></td>
+<td>print ascii art that fits the terminal width while maintaining aspect ratio</td>
+</tr>
+<tr>
+<td><code>-x</code>, <code>--flipX</code></td>
+<td>flip the ascii art horizontally on the terminal</td>
+</tr>
+<tr>
+<td><code>-y</code>, <code>--flipY</code></td>
+<td>flip the ascii art vertically on the terminal</td>
+</tr>
+<tr>
+<td><code>-s</code>, <code>--save-img</code></td>
+<td>saves the ascii as a PNG image with the name image_name-ascii-art.png</td>
+</tr>
+<tr>
+<td><code>--save-txt</code></td>
+<td>saves the ascii art as a TXT file with the name image_name-ascii-art.TXT</td>
+</tr>
+<tr>
+<td><code>--save-gif</code></td>
+<td>Saves the imported GIF as an ascii art GIF with the name image_name-ascii-art.gif , experimental</td>
+</tr>
+<tr>
+<td><code>--save-bg</code></td>
+<td>this flag takes an RGB value that sets the background color in saved png and gif files</td>
+</tr>
+<tr>
+<td><code>--font</code></td>
+<td>this flag takes path to a font .ttf file that will be used to set font in saved png or gif files</td>
+</tr>
+<tr>
+<td><code>--font-color</code></td>
+<td>this flag takes an RGB value that sets the font color in saved png and gif files as well as displayed ascii art in terminal</td>
+</tr>
+<tr>
+<td><code>--only-save</code></td>
+<td>don’t print ascii art on the terminal if some saving flag is passed</td>
+</tr>
+<tr>
+<td><code>--formats</code></td>
+<td>display supported input formats</td>
+</tr>
+</tbody>
+</table>
+<p>note: for the sake of keeping the table orginized, the description is not as verbose as the original repo page.</p>
+<h2>basic usage</h2>
+<pre class="hljs"><code>ascii-image-converter yin_yang.jpg -s . -W 64 --only-save
+</code></pre>
+<p><img src="https://user-images.githubusercontent.com/59083599/136243139-541425e3-82d0-4222-9cf9-c1ed8f3e7796.png" alt="yin_yang-ascii-art"></p>
+<p><code>-s .</code> output external image <code>-W 64</code> set 64 character width <code>--only-save</code> to not print the ascii art in the terminal</p>
+<h3>with color</h3>
+<pre class="hljs"><code>ascii-image-converter rubikQ.jpg -C -s . -W 96 --only-save
+</code></pre>
+<p><img src="https://user-images.githubusercontent.com/59083599/136244404-95ad4260-1e7f-4f2b-b8bb-5e429703a110.jpg" alt="rubikQ-ascii-art"></p>
+<pre class="hljs"><code>ascii-image-converter sneaker.jpg -C -s . -W 128 --only-save
+</code></pre>
+<p><img src="https://user-images.githubusercontent.com/59083599/136244547-8cf39735-1578-4c05-855c-9c84a6fe2b4b.jpg" alt="sneaker-ascii-art"></p>
+<h2>using custom characters</h2>
+<p>using the <code>-m</code> flag we can use our own string of characters</p>
+<pre class="hljs"><code>ascii-image-converter paint2.jpg -C -s . -W 104 --only-save -m &quot;-_\|/&quot;
+</code></pre>
+<p><img src="https://user-images.githubusercontent.com/59083599/136245496-4627865c-4014-435e-9425-ce9f7828c512.jpg" alt="paint2-ascii-art"></p>
+<pre class="hljs"><code>ascii-image-converter sofa.jpg -C -s . -W 96 --only-save -m &quot;[]{}|()&quot;
+</code></pre>
+<p><img src="https://user-images.githubusercontent.com/59083599/136248549-f60c32fe-089e-4e83-a7f1-02de30f0cbb9.jpg" alt="sofa-ascii-art"></p>
+<pre class="hljs"><code>ascii-image-converter newspaper.jpg -C -s . -W 200 --only-save -m &quot;.oO01&quot;
+</code></pre>
+<p><img src="https://user-images.githubusercontent.com/59083599/136247425-2e30dac0-4ef8-4cd3-a3f0-5e80f5c5fee4.jpg" alt="newspaper-ascii-art"></p>
+<h2>using nerd fonts</h2>
+<p><a href="https://www.nerdfonts.com/#home">nerd fonts</a> are a collection of free and open sort fonts that have many extra glyphs patched into them, download one of them <a href="https://www.nerdfonts.com/font-downloads">here</a>, use windows compatible mono varient even if you are in linux like me or on macos, lets rename it to <code>NerdMono.ttf</code> so it’s easier to link and put inside the folder you want to convert your images on. we’ll use the <code>--font</code> flag to use it.</p>
+<pre class="hljs"><code>ascii-image-converter github.png -C -s . -W 48 --only-save -m &quot;&quot; --font NerdMono.ttf
+</code></pre>
+<p><img class="verticalimg" src="https://user-images.githubusercontent.com/59083599/136251225-edfe33a8-ab77-409c-873a-4baf43abcf7f.png" alt="github-ascii-art"></p>
+<p>the glyph probably doesn’t show in this markdown file but if you copy the link it will work</p>
+<h2>braille art</h2>
+<pre class="hljs"><code>ascii-image-converter earth.jpg -C -s . -W 96 --only-save -b --dither
+</code></pre>
+<p><img src="https://user-images.githubusercontent.com/59083599/136256903-0545bc11-273b-4c8a-985f-bf274a72c81b.jpg" alt="earth-ascii-art"></p>
+<p>with braille we also pass <code>--dither</code> flag to have more details in the output image</p>
+<h2>iterate over an image with progressing width size</h2>
+<p>lets convert this image 36 times, starting with 25 width and then 30 and 35 and 40 etc to get to 200 shapes in the 30th picture …</p>
+<p>since this program does not accept changing output names and we know it’s going to add a <code>-ascii-art.png</code> at the end of the image lets just rename the outputs ourselves</p>
+<pre class="hljs"><code>for a in {50..200..5} ; do ascii-image-converter ice_cream.jpg -C -s . -W $a --only-save ; mv ice_cream-ascii-art.png i-$a.png ; done
+</code></pre>
+<p>we used the numbers we created as the width of our images, and used the same numbers to change the output names because if we didn’t the program would just overwrite the image 36 times and we end up with one output image</p>
+<p>since these images are all in different resoloutions and we can’t make a gif or video with them so let’s scale all of them to the same size</p>
+<pre class="hljs"><code>for f in *.png; do ffmpeg -i &quot;$f&quot; -vf scale=1200:720 &quot;./${f%%.png}.png&quot;; done 
+</code></pre>
+<p>and mux them, because we have both 2 digit and 3 digits numbers and we want to sort them numerically we first use ls in our folder to find every png file and then pipe it to cat and convert it with ffmpeg</p>
+<pre class="hljs"><code>ls -v *.png | xargs cat | ffmpeg -framerate 5 -f image2pipe -i -  ascii_ice_cream+.mp4 
+</code></pre>
+
+<video controls loop>
+    <source src="https://user-images.githubusercontent.com/59083599/136264260-eea39184-9d06-4d66-ae7a-8fafd2b18380.mp4" type="video/mp4">
+  </video>
+
+<h2>asciify a video</h2>
+<p>lets apply what we learned to a video, i have made a example of how to download a free video, make image sequence, apply filter and mux it back <a href="https://github.com/junguler/ffmpeg-examples/tree/main/sequence%2C%20manipulate%20%26%20mux%20images">here</a></p>
+<pre class="hljs"><code>for a in *.jpg ; do ascii-image-converter $a -C -s . -W 128 --only-save -m &quot;.oO0&quot; ; done 
+</code></pre>
+<p>and mux the images</p>
+<pre class="hljs"><code>cat *.png | ffmpeg -framerate 20 -f image2pipe -i - -vf format=yuv420p ascii_parkour.mp4 
+</code></pre>
+
+<video controls loop>
+    <source src="https://user-images.githubusercontent.com/59083599/136268364-35ceb0bc-acd7-4d66-b6df-059c7ba5eb88.mp4" type="video/mp4">
+  </video>
+
+<pre class="hljs"><code>for a in *.jpg ; do ascii-image-converter $a -C -s . -W 128 --only-save ; done 
+</code></pre>
+
+<video controls loop>
+    <source src="https://user-images.githubusercontent.com/59083599/136197185-497dce3e-b836-4cdc-baf7-6d3ebf4623b6.mp4" type="video/mp4">
+  </video>
+
+
+<p id="down"></p>
+
+<br><br><br>
+<footer class="footer2">
+    Page is converted from markdown to html by Markdown-it, Look <a class="linkyel" href="https://markdown-it.github.io/"">here</a>  for more information
+</footer>
+
+<a class="up" href="#"><img src="../stuff/up.png"></a>
+
+<a class="down" href="#down"><img src="../stuff/down.png"></a>

@@ -293,4 +293,23 @@ i'm planning to use this method to easily convert my markdown tutorials to pages
 
 update: converting 9 markdown tutorial pages to html only took 2 hours to get up and running, this is the fastest way of writing html i know of
 
+### embed video in your page
+for embedding video to our page we can use the `<video></video>` tag, we can also specify to always show the video controls and loop the video by placing them inside our opening tags `<video controls loop>` and then embed the video using `<source src="video.mp4" type="video/mp4"` we also specified the type of video we are embedding which is `video/mp4`
+```
+<video controls loop>
+  <source src="https://user-images.githubusercontent.com/59083599/140249243-f8eeb164-4dda-4511-8d0c-fb03c2f84e68.mp4" type="video/mp4">
+</video>
+```
+for making the video look right we also add width and height styling to the video tag, either manually:
+```
+<video style="width: 100%;height: auto;" controls loop>
+```
+or in our css stylesheet:
+```
+video {
+    width: 100%;
+    height: auto;
+}
+```
+
 #### more stuff will be added as i learn ...

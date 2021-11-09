@@ -20,6 +20,7 @@ my work in progress website, the old markdown file was moved to [old-README.md](
  * [add background image or use gradient colors](https://github.com/junguler/junguler.github.io#change-background-color-or-use-an-image)
  * [add some basic css](https://github.com/junguler/junguler.github.io#add-some-basic-css)
  * [write in markdown and convert it to html](https://github.com/junguler/junguler.github.io#write-in-markdown-and-convert-to-html)
+ * [embed a video in html](https://github.com/junguler/junguler.github.io#embed-video-in-your-page)
 
 ### first step
 make a github account, start a new repo with your username and add `.github.io` at the end of it, see [here](https://pages.github.com/) for detailed information

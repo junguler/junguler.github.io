@@ -21,6 +21,7 @@ my work in progress website, the old markdown file was moved to [old-README.md](
  * [add some basic css](https://github.com/junguler/junguler.github.io#add-some-basic-css)
  * [write in markdown and convert it to html](https://github.com/junguler/junguler.github.io#write-in-markdown-and-convert-to-html)
  * [embed video in your page](https://github.com/junguler/junguler.github.io#embed-video-in-your-page)
+ * [make a nested menu at the top of the page](https://github.com/junguler/junguler.github.io#make-a-nested-menu-at-the-top-of-the-page)
 
 ### first step
 make a github account, start a new repo with your username and add `.github.io` at the end of it, see [here](https://pages.github.com/) for detailed information

@@ -313,4 +313,65 @@ video {
 }
 ```
 
+### make a nested menu at the top of the page
+for making a nested menu we need to use two tags, first one is the ul tag `<ul>` which makes our menu entry and li tag `<li>` which lets us nest links inside it
+
+the first step is to open a nav tag an put our ul and li tags inside
+```
+<nav>
+    <ul class="nav">
+      <li class="menu">
+        <a href="first.html"> first menu entry </a>
+      <li class="menu">
+        <a href="second.html"> second menu entry </a>
+        <ul>
+          <li><a href="nested.html"> nested menu entry inside second menu </a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+```
+now for applying css, for our ul and li tags
+```
+ul {
+    list-style: none;
+}
+
+li {
+    position: relative;
+}
+
+li ul {
+    display: none;
+    position: absolute;
+    background-color: #444;
+    padding: 2px 6px 6px 6px;
+}
+  
+li:hover ul {
+    display: block;
+}
+```
+notice that we have set differnt css styles for ul tags that have li tags inside them and also for overing over our menu entries, we also made some classes that we applied to our tags manually, .nav is being applied to the whole menu and is the most influencial in the overal look of your menu
+```
+.nav {
+    position: fixed;
+    background-color: #444;
+    font-size: 20px;
+    float: left;
+    padding: 0px;
+    display: flex;
+    list-style: none;
+    flex-direction: row;
+}
+
+.menu {
+    display: inline-block;
+    font-weight: bold;
+}
+```
+like all the other examples so far if you are linking to a page that's not in the root of your blog directory you to change the links of your menu entries in you pages
+
+unfortuently i lost the link to the page i've taken this information from but here is a usueful [page](https://www.w3.org/wiki/Creating_multiple_pages_with_navigation_menus) with more information
+
 #### more stuff will be added as i learn ...

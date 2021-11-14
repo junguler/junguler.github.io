@@ -1,4 +1,4 @@
-my work in progress website, the old markdown file was moved to [old-README.md](https://github.com/junguler/junguler.github.io/blob/main/old-README.md) for archivable purposes and i try to explain what i've learned better this time
+my work in progress website, i try to document everything i learn here
 
 ### quick links
  * [first step](https://github.com/junguler/junguler.github.io#first-step)

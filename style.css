@@ -81,7 +81,21 @@ li ul {
 li:hover ul {
     display: block;
 }
-  
+
+nav ul ul li{
+    width: 225px;
+    float: none;
+    display: list-item;
+    position: relative;
+
+}
+
+nav ul ul ul li {
+    position: relative;
+    top: -60px;
+    left: 170px;
+}
+
 .nav {
     position: fixed;
     background-color: #444;

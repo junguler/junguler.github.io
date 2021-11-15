@@ -373,6 +373,6 @@ notice that we have set differnt css styles for ul tags that have li tags inside
 ```
 like all the other examples so far if you are linking to a page that's not in the root of your blog directory you to change the links of your menu entries in you pages
 
-unfortuently i lost the link to the page i've taken this information from but here is a usueful [page](https://www.w3.org/wiki/Creating_multiple_pages_with_navigation_menus) with more information
+this information was taken from this page [here](https://dev.to/monalishamondol/how-to-create-drop-down-menu-in-html-and-css-3e14)
 
 #### more stuff will be added as i learn ...

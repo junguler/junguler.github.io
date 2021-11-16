@@ -30,6 +30,7 @@ img {
     background-color: #222;
     color: #ccc;
     padding: 2% 16% 2% 16%;
+    margin: auto;
     overflow: hidden;
     background-image: linear-gradient(#333,#111);
 }

@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="en">
+
+   <link href="../style.css" rel="stylesheet" type="text/css">
+
+   <div class="pagebody">
+
+<head>
+    <meta charset="utf-8">
+    <title>Stylize</title>
+    <link rel="shortcut icon" type="image/ico" href="../favicon.ico"/>
+
+</head>
+ <!-- 
+<img class="banner"  src="../stuff/p-banner.jpg" ><br>
+-->
+<nav>
+  <ul class="nav">
+    <li class="menu">
+      <a href="../index.html">Home</a></li>&nbsp;</a>
+      <li class="menu">
+        <a href="second.html">&nbsp;Projects&nbsp;</a>
+        <ul>
+          <li><a href="asciipy.html">Ascii_py</a></li>
+          <li><a href="asciimagec.html">Ascii-image-converter</a></li>
+        <li><a href="gmic.html">G'mic</a></li>
+        <li><a href="stylize.html">Stylize</a></li>
+        <li><a href="geometrize.html">Geometrize</a></li>
+        <li><a href="mosaic.html">Mosaic</a></li>
+        <li><a href="primitive.html">Primitive</a></li>
+        <li><a href="tiler.html">Tiler</a></li>
+        <li><a href="triangle.html">Triangle</a></li>
+        <li><a href="triangula.html">Triangula</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+<br> <br>  
+
+<body>
+
+<h1>Stylize</h1>
+
+<h2>what is needed to get started?</h2>
+<p>G’mic is a massive collection of image processing filters combined to a one easy to use gui and cli program that can be installed on gimp, krita etc … or used on the terminal, it’s so big even tho i already made a markdown file specific for showing it with many examples i barely scracthed the surface of what it does and i’m going to showcase one of it’s filters here</p>
+<p>for the basics of how to use the G’mic look <a href="https://github.com/junguler/_image-manipulation/tree/main/G'mic">here</a> , now that you are somewhat familier with this program lets do our thing</p>
+<p>stylize is a cool filter for applying style transfer to our images, see <a href="https://discuss.pixls.us/t/style-transfer-soon-in-gmic/10009">here</a> for a deep dive of the filter documented by G’mic, stylize is the most easy to use and un-complicated implementation of style transfer i have seen that runs localy on your computer without the need for internet or installing extra programs like python, lua or others</p>
+<p>note: images that are linked in this markdown file are compressed to make loading the page faster, for the uncompressed versions go to the examples folder</p>
+
+<h2>source material</h2>
+<p>everything is downloaded from a royalty free image website <a href="https://free-images.com/">here</a> and <a href="https://www.rawpixel.com/free-images">here</a>, there is also some royalty free stock footage from youtube</p>
+<h2>explanation of the config and how the program works</h2>
+<table>
+<thead>
+<tr>
+<th>basic</th>
+<th>advanced</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img src="https://user-images.githubusercontent.com/59083599/142251747-87337ed0-7a59-4461-addb-bcc2de4bfbed.png" alt="basic"></td>
+<td><img src="https://user-images.githubusercontent.com/59083599/142251780-644e1b0a-aa69-4109-b949-4ff65153533f.png" alt="advanced"></td>
+</tr>
+</tbody>
+</table>
+<p>the default options in the gui translates to this command in the cli by clicking on the copy command icon on the top right side of the gui</p>
+<pre class="hljs"><code>fx_stylize 0,5,0,0,0.5,2,3,0.5,0.1,3,3,0,0.7,1,0,1,0,5,5,7,1,30,10,2,1.85,0
+</code></pre>
+<p>add a gmic behind the command, specify your input image and output image, styles has a few images embedded into it if you don’t want to set an style image</p>
+<pre class="hljs"><code>gmic input.jpg fx_stylize 2,5,0,0,0.5,2,3,0.5,0.1,3,3,0,0.7,1,0,1,0,5,5,7,1,30,10,2,1.85,0 -o output.jpg
+</code></pre>
+<p>the 2 after fx_stylize tells gmic to use the 3rd option in the first gui entry which is the first embedded image style, by default 0 is used which uses the first image as our style so if we want to specify our own style we set that number to 0 and insert 2 images to gmic</p>
+<pre class="hljs"><code>gmic style.jpg input.jpg fx_stylize 0,5,0,0,0.5,2,3,0.5,0.1,3,3,0,0.7,1,0,1,0,5,5,7,1,30,10,2,1.85,0 -o output.jpg
+</code></pre>
+<h2>basic usage (using built-in styles)</h2>
+<p>we’ll start we some pre-embeded images as styles, this is easiest way to use the filter</p>
+<pre class="hljs"><code>gmic earth.jpg fx_stylize 32,5,0,0,0.5,2,3,0.5,0.1,3,3,0,0.7,1,0,1,0,5,5,7,1,30,10,2,1.85,0 -o earth_gogh+.jpg
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>input</th>
+<th>style (Picasso: Seated Woman)</th>
+<th>output</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img src="https://user-images.githubusercontent.com/59083599/142257831-d3b92d15-a48b-4236-bc98-b105fad1c71d.jpg" alt="earth"></td>
+<td><img src="https://user-images.githubusercontent.com/59083599/142258697-e29dc7a4-b063-49ae-8633-aa46ce92ffdd.jpg" alt="seated-woman"></td>
+<td><img src="https://user-images.githubusercontent.com/59083599/142258296-d0c19057-268a-4b55-aeee-7848abde5fd8.jpg" alt="earth_gogh1+"></td>
+</tr>
+</tbody>
+</table>
+<pre class="hljs"><code>gmic statue.jpg fx_stylize 25,5,0,0,0.5,2,3,0.5,0.1,3,3,0,0.7,1,0,1,0,5,5,7,1,30,10,2,1.85,0 -o statue_mondrian+.jpg
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>input</th>
+<th>style (Mondrian: Gray Tree)</th>
+<th>output</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img src="https://user-images.githubusercontent.com/59083599/142259582-c6ac9d8d-4c38-42cd-9c44-22e674addb2b.jpg" alt="statue"></td>
+<td><img src="https://user-images.githubusercontent.com/59083599/142259637-6a8cdc2d-5580-440c-a3e1-686f23854731.jpg" alt="gray-tree"></td>
+<td><img src="https://user-images.githubusercontent.com/59083599/142259678-3f184ae3-b7d2-42a4-9e84-53d76bd138b7.jpg" alt="statue_mondrian+"></td>
+</tr>
+</tbody>
+</table>
+<h2>basic usage (using our own images as styles)</h2>
+<pre class="hljs"><code>gmic tree.jpg lighthouse.jpg fx_stylize 0,5,0,0,0.5,2,3,0.5,0.1,3,3,0,0.7,1,0,1,0,5,5,7,1,30,10,2,1.85,0 -o Light_tree.jpg ; rm *000000.jpg
+</code></pre>
+<p>this command outputs two images, <code>Light_tree_000000</code> which is the same as our input image and <code>Light_tree_000001.jpg</code> which is what we actually want so for further commands we add a remove command at the end of our command to remove this undded file like this <code>; rm *000000.jpg</code> the <code>;</code> add the remove command to our gmic command to make it a one liner</p>
+<table>
+<thead>
+<tr>
+<th>input</th>
+<th>style</th>
+<th>output</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img src="https://user-images.githubusercontent.com/59083599/142261240-04c46041-153a-49e7-bc67-1f53dc5f9c09.jpg" alt="lighthouse"></td>
+<td><img src="https://user-images.githubusercontent.com/59083599/142261261-96e40765-9668-417f-be2d-2750423147c7.jpg" alt="tree"></td>
+<td><img src="https://user-images.githubusercontent.com/59083599/142262867-65fb5b74-48b4-450f-87e6-f920d79b0fc1.jpg" alt="Light_tree_000001+"></td>
+</tr>
+<tr>
+<td><img src="https://user-images.githubusercontent.com/59083599/142262316-a205e42c-11bd-4a49-af5b-edaf0fc167cb.jpg" alt="genie"></td>
+<td><img src="https://user-images.githubusercontent.com/59083599/142262433-e4deb6ce-8786-46dc-9291-46268bdb395d.jpg" alt="skyscraper"></td>
+<td><img src="https://user-images.githubusercontent.com/59083599/142262911-2c182840-0a4d-49bf-8025-b5a1c1e562bf.jpg" alt="genie_sky_000001+"></td>
+</tr>
+<tr>
+<td><img src="https://user-images.githubusercontent.com/59083599/142265080-a3f49d5c-2284-44f6-9354-4e1cbc8bfd2b.jpg" alt="x-ray"></td>
+<td><img src="https://user-images.githubusercontent.com/59083599/142265108-71d1b61d-519e-465d-b599-4b8a944b6f80.jpg" alt="colorss"></td>
+<td><img src="https://user-images.githubusercontent.com/59083599/142265142-c6d6f7a7-4f1b-40f5-942a-ba700e48cf8a.jpg" alt="x-ray_color_000001+"></td>
+</tr>
+</tbody>
+</table>
+<h2>scale style image to produce different results</h2>
+<p>by default stylize sets your style image to 75% of it’s size and uses it to re-create the input image, you can set this operation to none or make the resizing smaller or bigger depending on your style image, the default value is a good start point and might be fine for your case but we’ll still show the differences here</p>
+<p>changing style scale is done by changing the second number we pass to fx_stylize filter, it starts at 0 and ends at 10</p>
+
+<table>
+<thead>
+<tr>
+<th>input</th>
+<th>style</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img src="https://user-images.githubusercontent.com/59083599/142270495-8fb30e96-8baf-4269-a74c-7af1a12f8629.jpg" alt="car"></td>
+<td><img src="https://user-images.githubusercontent.com/59083599/142270540-af5af17d-6fa7-4bd7-80bc-5baf7a3dcd6a.jpg" alt="magnet"></td>
+</tr>
+<tr>
+<td>10% scale (1)</td>
+<td>50% scale (4)</td>
+</tr>
+<tr>
+<td><img src="https://user-images.githubusercontent.com/59083599/142270795-fb81face-c795-486a-9dfb-8c2aa64d791e.jpg" alt="l-scale-10_000001"></td>
+<td><img src="https://user-images.githubusercontent.com/59083599/142270844-0d57bd3e-338d-4b3b-a67b-5693184e5ca8.jpg" alt="l-scale-50_000001"></td>
+</tr>
+<tr>
+<td>150% scale (7)</td>
+<td>300% scale (10)</td>
+</tr>
+<tr>
+<td><img src="https://user-images.githubusercontent.com/59083599/142270961-4ea352ac-b033-42c3-afe4-9420c95bc327.jpg" alt="l-scale-150_000001"></td>
+<td><img src="https://user-images.githubusercontent.com/59083599/142270995-e5d9b4c4-f691-4a5a-b449-a8a65235550f.jpg" alt="l-scale-300_000001"></td>
+</tr>
+</tbody>
+</table>
+
+<h2>specify smoothness</h2>
+<p>smoothness decides how much styles uses the style image to recreate the input image, the higher the smoothness the less the style image is used and the output image effected</p>
+
+<table>
+<thead>
+<tr>
+<th>input</th>
+<th>style</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img src="https://user-images.githubusercontent.com/59083599/142274659-0a2a782a-656c-475d-b5a4-dd7ac56e96da.jpg" alt="flower5"></td>
+<td><img src="https://user-images.githubusercontent.com/59083599/142275517-9b37a72b-ebbe-40f4-87e7-f09625497dac.jpg" alt="ice"></td>
+</tr>
+<tr>
+<td>smoothness 0</td>
+<td>smoothness 5</td>
+</tr>
+<tr>
+<td><img src="https://user-images.githubusercontent.com/59083599/142275804-8d23337c-f9bd-441c-a0d5-a1ee8ec74300.jpg" alt="l-smooth_0_000001"></td>
+<td><img src="https://user-images.githubusercontent.com/59083599/142275851-861cce24-b9a6-4d04-ae5f-3e801e030ab9.jpg" alt="l-smooth_5_000001"></td>
+</tr>
+</tbody>
+</table>
+
+<h2>respect gradients</h2>
+<p>by default stylize only takes 20% (1 out 5) of gradients into the effect, this part of the filter works in tandom with the smoothness option but won’t mix them here because we want to showcase it on it’s own</p>
+
+<table>
+<thead>
+<tr>
+<th>input</th>
+<th>style</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img src="https://user-images.githubusercontent.com/59083599/142278864-78ff6cff-512a-4872-9447-5f008b61f0eb.jpg" alt="tincan"></td>
+<td><img src="https://user-images.githubusercontent.com/59083599/142278899-6dfb86e5-7ae3-4691-9706-4a5d650c0b12.jpg" alt="wall"></td>
+</tr>
+<tr>
+<td>gradients 0</td>
+<td>gradients 5</td>
+</tr>
+<tr>
+<td><img src="https://user-images.githubusercontent.com/59083599/142279142-9cf64207-6d14-4076-a15d-70dbb27ba331.jpg" alt="l-gradient_0_000001"></td>
+<td><img src="https://user-images.githubusercontent.com/59083599/142279166-fe70c030-1fa4-4d5b-a9dc-3d99700403e8.jpg" alt="l-gradient_5_000001"></td>
+</tr>
+</tbody>
+</table>
+
+<h2>other config knobs and choices</h2>
+<p>there is simply too many options to go over, i’m not sure how effective they are and how much they might show up in result outputs as i didn’t have the time to test them, but i’ll make sure to include them if they caught my attention</p>
+<h2>fun with gifs</h2>
+<p>making a animated gif with stylize is just as easy as still images, we just need a <code>for</code> loop for batch processing, if we don’t have a image sequence of your gif file you can make one like this</p>
+<pre class="hljs"><code>ffmpeg -i my.gif -vsync 0 S-%4d.jpg
+</code></pre>
+<p>the above command pads 4 zeros to our images after <code>S-</code> , each gif file is limited to 500 frames but we add an extra 0 at the begining to make life easier for our for loop and the conversion of our stylized sequence to gif again</p>
+<p>now for converting our newly made image sequence</p>
+<pre class="hljs"><code>for i in S-0*.jpg ; do gmic crochet.jpg $i fx_stylize 0,5,0,0,0.5,2,3,0.5,0.1,3,3,0,0.7,1,0,1,0,5,5,7,1,30,10,2,1.85,0 -o G-$i.jpg ; rm *000000.jpg ; done
+</code></pre>
+<p>now make the animated gif</p>
+<pre class="hljs"><code>cat G-*.jpg | ffmpeg -framerate 30 -f image2pipe -i - -preset veryslow crochet_face.gif
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>input</th>
+<th>output</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img src="https://user-images.githubusercontent.com/59083599/142287222-4892d2a4-6963-457a-93b0-f0b141cd6441.gif" alt="face-low"></td>
+<td><img src="https://user-images.githubusercontent.com/59083599/142287356-4fba04cb-bd6d-435c-9160-41b0e558bfe1.gif" alt="crochet_low"></td>
+</tr>
+</tbody>
+</table>
+<p>for the style image go to the gif folder inside examples, these gifs were significantly compressed using gifsicle to make their size way smaller and are not representitive of the actual result quality</p>
+<h2>stylizify a video</h2>
+<p>lets apply what we learned to a video, i have made a example of how to download a free video, make image sequence, apply filter and mux it back <a href="https://github.com/junguler/ffmpeg-examples/tree/main/sequence%2C%20manipulate%20%26%20mux%20images">here</a></p>
+<pre class="hljs"><code>for i in *.jpg ; do gmic zebra.jpg $i fx_stylize 0,5,0,0,0.5,2,3,0.5,0.1,3,3,0,0.7,1,0,1,0,5,5,7,1,30,10,2,1.85,0 -o G-$i.jpg ; rm *000000.jpg ; done 
+</code></pre>
+<p>as you can see the process is similar to gif making, we just want to make a video instead, videos have the advantage of applying a uniform compression to each frame and produce an amazing quality images with a really small output size</p>
+<pre class="hljs"><code>cat G-*.jpg | ffmpeg -framerate 30 -f image2pipe -i - -preset veryslow cycle-zebra.mp4
+</code></pre>
+
+<video controls loop>
+    <source src="https://user-images.githubusercontent.com/59083599/142290088-fcff6549-03e5-43f5-a727-385a3ef823a5.mp4" type="video/mp4">
+  </video>
+
+
+<p id="down"></p>
+
+<br><br><br>
+<footer class="footer2">
+    Page is converted from markdown to html by Markdown-it, Look <a class="linkyel" href="https://markdown-it.github.io/"">here</a>  for more information
+</footer>
+
+<a class="up" href="#"><img src="../stuff/up.png"></a>
+
+<a class="down" href="#down"><img src="../stuff/down.png"></a>

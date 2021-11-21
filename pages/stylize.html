@@ -276,6 +276,46 @@
 </video>
 
 
+<h2>glitch it</h2>
+<p>we’ve been trying to re-create the input images as best as we can and get a clear result, lets change all of that and destroy the input</p>
+<p>the easiest way you can go about this is using a frame out of an image sequence as the style image</p>
+<pre class="hljs"><code>for i in *.jpg ; do gmic 0468.jpg $i fx_stylize 0,6,0,0,0.5,2,3,0.5,0.1,3,3,0,0.7,1,0,1,0,5,5,7,1,30,10,2,1.85,0 -o G-$i.jpg ; rm *000000.jpg ; done
+</code></pre>
+
+<video controls loop>
+  <source src="https://user-images.githubusercontent.com/59083599/142775522-d84679bf-dee3-4f5e-ab9a-3e89242c5b76.mp4" type="video/mp4">
+</video>
+
+<p>using a glitched image as style</p>
+
+<video controls loop>
+  <source src="https://user-images.githubusercontent.com/59083599/142775599-9cf014d1-1e78-46a2-ac6e-2de7a00c4268.mp4" type="video/mp4">
+</video>
+
+<p>use a pixelated or a very small image as style</p>
+
+<video controls loop>
+  <source src="https://user-images.githubusercontent.com/59083599/142776987-c4e304e7-403c-4e77-b954-df675867145e.mp4" type="video/mp4">
+</video>
+
+<p>use a blank noise image as style</p>
+
+<video controls loop>
+  <source src="https://user-images.githubusercontent.com/59083599/142778275-acd9864c-c722-4a3a-8ecb-5040e5dc6956.mp4" type="video/mp4">
+</video>
+
+<p>use a dithered gradient as style</p>
+
+<video controls loop>
+  <source src="https://user-images.githubusercontent.com/59083599/142779160-f6b6f1ef-2395-4e82-a05b-123cf10b7405.mp4" type="video/mp4">
+</video>
+
+<p>use an inverted image as the style, this is a different effect from inverting the output video of our first example as the dark parts of the image are not placed on the bright areas and vise versa</p>
+
+<video controls loop>
+  <source src="https://user-images.githubusercontent.com/59083599/142779372-6bdcf6cb-aae9-4dd7-9f22-925c112b66cf.mp4" type="video/mp4">
+</video>
+
 <p id="down"></p>
 
 <br><br><br>

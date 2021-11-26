@@ -357,7 +357,7 @@ lets change it to <code>fname = r'input.jpg'</code> so we have a unified way of 
 
 
 <h2>mosaicify a video</h2>
-<p>lets apply what we learned to a video, i have made a example of how to download a free video, make image sequence, apply filter and mux it back <a href="https://github.com/junguler/ffmpeg-examples/tree/main/sequence%2C%20manipulate%20%26%20mux%20images">here</a></p>
+<p>lets apply what we learned to a video, i have made a example of how to download a free video, make image sequence, apply filter and mux it back <a href="https://github.com/junguler/ffmpeg-examples/tree/main/sequence%20-%20manipulate%20%26%20mux%20images">here</a></p>
 <pre class="hljs"><code>for i in *.jpg ; do cp $i input.jpg ; python3 ~/git-stuff/mosaic/mosaic.py ; rm input.jpg ; mv output.svg $i.svg ; done 
 </code></pre>
 <p>first we assign every jpg file to our for loop, duplicate them one by one and name them input.jpg, convert the image using mosaic and remove the duplicated file and finally rename output.svg to the same name as our initial input so it’s not overwritten by the next output file. note that you have to manually close the gui window each time as i don’t know enough python to make this automatic</p>

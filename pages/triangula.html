@@ -225,7 +225,7 @@
 </code></pre>
 <p><img src="https://user-images.githubusercontent.com/59083599/135898185-d2fdc49a-936c-49c6-925d-44c0db9a93c7.gif" alt="katana++"></p>
 <h2>triangulafy a video</h2>
-<p>lets apply what we learned to a video, i have made a example of how to download a free video, make image sequence, apply filter and mux it back <a href="https://github.com/junguler/ffmpeg-examples/tree/main/sequence%2C%20manipulate%20%26%20mux%20images">here</a></p>
+<p>lets apply what we learned to a video, i have made a example of how to download a free video, make image sequence, apply filter and mux it back <a href="https://github.com/junguler/ffmpeg-examples/tree/main/sequence%20-%20manipulate%20%26%20mux%20images">here</a></p>
 <pre class="hljs"><code>for d in *.jpg ; do timeout 10s triangula run -img $d -out j.json -p 250 ; triangula render -in j.json -out T-${d%%.*} -img $d png ; rm j.json ; done
 </code></pre>
 <p>and mux the images</p>

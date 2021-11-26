@@ -257,7 +257,7 @@ primitive does not come with a binary executable by default, you can either inst
   </video>
 
 <h2>primitify a video</h2>
-<p>lets apply what we learned to a video, i have made a example of how to download a free video, make image sequence, apply filter and mux it back <a href="https://github.com/junguler/ffmpeg-examples/tree/main/sequence%2C%20manipulate%20%26%20mux%20images">here</a></p>
+<p>lets apply what we learned to a video, i have made a example of how to download a free video, make image sequence, apply filter and mux it back <a href="https://github.com/junguler/ffmpeg-examples/tree/main/sequence%20-%20manipulate%20%26%20mux%20images">here</a></p>
 <pre class="hljs"><code>for i in image-000*.jpg ; do echo $i ; primitive -i $i -o p-$i.jpg -n 250 -m 0 -s 1280 -v ; done
 </code></pre>
 <p>and mux the images</p>

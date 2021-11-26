@@ -282,7 +282,7 @@
 </tbody>
 </table>
 <h2>tilify a video</h2>
-<p>lets apply what we learned to a video, i have made a example of how to download a free video, make image sequence, apply filter and mux it back <a href="https://github.com/junguler/ffmpeg-examples/tree/main/sequence%2C%20manipulate%20%26%20mux%20images">here</a></p>
+<p>lets apply what we learned to a video, i have made a example of how to download a free video, make image sequence, apply filter and mux it back <a href="https://github.com/junguler/ffmpeg-examples/tree/main/sequence%20-%20manipulate%20%26%20mux%20images">here</a></p>
 <pre class="hljs"><code>for i in *.jpg ; do python3 ~/git-stuff/tiler/tiler.py $i ~/git-stuff/tiler/tiles/waves/gen_wave/ ; mv out.png T-$i.png ; done  
 </code></pre>
 <p>because we are not in the folder <a href="http://tiler.py">tiler.py</a> is, we need to pass it’s complete path for the shell to know where it is, we should also change the name of output files because the program always outpots images as <code>out.png</code> and if we didn’t change them they would have been overwritten</p>

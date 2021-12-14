@@ -431,7 +431,7 @@ src: url("../stuff/CaskaydiaCoveNF.ttf") format("truetype");
 
 we are ready to use some glyphs, go to the [cheat sheet](https://www.nerdfonts.com/cheat-sheet) on the nerd fonts websites and search for a glyph you like
 
-![](https://github.com/junguler/_dork-word-play/blob/main/temp/nerd.png)
+![](stuff/nerd.png)
 
 the css file we downloaded helpfully converted every hex glyph to classes for us to use, when you found a glyph you like click on the class word to copy it to your clipboard, here is an example that was given by the same page
 

@@ -117,15 +117,19 @@ nav ul ul ul li {
     position: fixed;
     bottom: 100px;
     right: 16%;
-    background-color: #444;
-    padding: 5px;
+    /* background-color: #444; */
+    color: #ccc;
+    /* padding: 5px; */
+    font-size: 35px;
 }
 
 .down {
     position: fixed;
     bottom: 60px;
     right: 16%;
-    background-color: #444;
-    padding: 5px;
+    /* background-color: #444; */
+    color: #ccc;
+    /* padding: 5px; */
+    font-size: 35px;
 }
 

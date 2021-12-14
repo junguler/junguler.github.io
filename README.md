@@ -433,7 +433,7 @@ we are ready to use some glyphs, go to the [cheat sheet](https://www.nerdfonts.c
 
 ![](https://github.com/junguler/_dork-word-play/blob/main/temp/nerd.png)
 
-the css file we downloaded helpfully converted every hex glyph to classes for us to use, when you found a glyph you like click on the class name to copy it to your clipboard, here is an example that was given by the same page
+the css file we downloaded helpfully converted every hex glyph to classes for us to use, when you found a glyph you like click on the class word to copy it to your clipboard, here is an example that was given by the same page
 
 ```
 I really <i class="nf nf-fa-heart"></i> <i class="nf nf-custom-vim"></i>

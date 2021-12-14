@@ -375,4 +375,31 @@ like all the other examples so far if you are linking to a page that's not in th
 
 this information was taken from this page [here](https://dev.to/monalishamondol/how-to-create-drop-down-menu-in-html-and-css-3e14)
 
+### add a nerd font for eacy glyphs/icons on your website
+i've been using actual images for logos on my website, it's time to level-up and use a nerd font and use it's glyphs in our website
+
+first step is to download an already made css provided by the nerd font repo [here](https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/css/nerd-fonts-generated.css) download it on your computer, now download a nerd font (i've included one in this repo) and change the name of the font on line number 11 and add it's location relative to the root of your website directory 
+```
+src: url("../stuff/CaskaydiaCoveNF.ttf") format("truetype");
+```
+we are ready to use some glyphs, go to the [cheat sheet](https://www.nerdfonts.com/cheat-sheet) on the nerd fonts websites and search for a glyph you like
+![](https://github.com/junguler/_dork-word-play/blob/main/temp/nerd.png)
+the css file we downloaded helpfully converted every hex glyph to classes for us to use, when you found a glyph you like click on the class name to copy it to your clipboard, here is an example that was given by the same page
+
+```
+I really <i class="nf nf-fa-heart"></i> <i class="nf nf-custom-vim"></i>
+```
+
+now source the css file at the top of the pages you want to use the glyphs on
+```
+<link href="nerd-fonts.css" rel="stylesheet" type="text/css">
+```
+now we are ready to use a glyph, lets use the github logo in the footer of the main page
+```
+Made with <i class="nf nf-oct-mark_github"></i> &nbsp; github's free web hosting, Look <a class="linkyel" href="https://pages.github.com/">here</a>  for more information
+```
+some of these glyphs are 2 width characters so if you find them getting stuck together or to other words you can add some whitespace after them using `&nbsp;`
+
+now you can easily use any nerd font glyphs inside your website as long as you have the font itself and the css file included
+
 #### more stuff will be added as i learn ...

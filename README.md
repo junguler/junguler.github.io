@@ -24,8 +24,12 @@ my work in progress website, i try to document everything i learn here
  * [make a nested menu at the top of the page](https://github.com/junguler/junguler.github.io#make-a-nested-menu-at-the-top-of-the-page)
  * [add a nerd font for easy glyphs/icons](https://github.com/junguler/junguler.github.io#add-a-nerd-font-for-easy-glyphsicons-on-your-website)
 
+<br>
+
 ### first step
 make a github account, start a new repo with your username and add `.github.io` at the end of it, see [here](https://pages.github.com/) for detailed information
+
+<br>
 
 ### make index.html
 make a new file named `index.html` this will be your home page, lets put the basic stuff in it
@@ -47,8 +51,12 @@ as soon as you made that `index.html` you can visit your newly created site whic
 
 here is mine [https://junguler.github.io/](https://junguler.github.io/)
 
+<br>
+
 ### install VSCodium or another ide
 i recommend you install vs codium which is a foss fork of vs code to make life easier, especially since it comes with many autocomplete features which cuts down and typing by quite a lot, install it from [here](https://vscodium.com/)
+
+<br>
 
 ### some basic tags and how to use them
 title: sets title of your page which is shown in the browser tab bar
@@ -75,10 +83,14 @@ br: makes a break between lines, like using inter in a text editor
 ```
 above code applies a break before and after our paragraph, sometimes you need to pass two breaks `<br><br>` to actually give two lines the one line distance we need. this could be two at the last part of above line, one on at the end of above line and on at the start of below line or two at the start of the below line.
 
+<br>
+
 ### add files to your repo
 you can add images, movies, music and many other things to your repo, i have made a `stuff` folder for this purpose. if you are working on the github web interface making a new folder is quite easy, click on `add file` on the top of your repo page click on `create a new file`. by default github puts your new file at the root directory of you repo but we want to make a new folder so in the name field at the top add a slash `/` to let github know we want to make a new folder, name your folder whatever you want and put another slash `/` after it and make an empty txt file like `1.txt` and click commit at the bottom.
 
 the reason for making an empty file is github automatically removes empty directories/folders inside your repo, you can remove the empty txt file as long as you have at least one other file inside that folder which can be done by clicking `add file` and choosing `upload files`
+
+<br>
 
 ### link a file that you uploaded in the directory in your page
 lets assume i've uploaded a jpg file named `avatar` in my `stuff` folder, linking it to my page is easy
@@ -86,11 +98,15 @@ lets assume i've uploaded a jpg file named `avatar` in my `stuff` folder, linkin
 <img src="stuff/avatar.jpg"/>
 ```
 
+<br>
+
 ### add favicon to your page
 favicon are the little icons that show up at the left side of tab bar in your browser, altho we can use other image types for this lets do it by the book and convert it to a proper favicon using [this website](https://iconifier.net/) once you converted your image to favicon rename it to `favicon.ico` if it's not already and place it in the root directory of your repo, just hit `add file` then `upload files` method. now lets add it to our page
 ```
 <link rel="shortcut icon" type="image/ico" href="favicon.ico"/>
 ```
+
+<br>
 
 ### add styles to tags
 styles are a very easy way to apply certain effects to the content of your tags, they sit right after you opened a new tag with `<tag style: > </tag>` lets apply a pink color to a paragraph to show and example:
@@ -111,6 +127,8 @@ are white
 </p>
 ```
 
+<br>
+
 ### add padding to our page
 since monitor and displays are getting quite large in dpi we have to force everything in our site in the middle for the page to look better in all sizes of the screen, for this purpose we use the padding option. padding can be set many different things like pixels, centimeters and other things but the best option is percentage which takes to account the browsers windows size.
 ```
@@ -125,6 +143,8 @@ second `color:#AAA` sets the color of everything we haven't specifically set the
 third `padding:3% 16% 3% 16%` pads the sides of our page to be shoved in the middle, it goes in the top, right, bottom, left order. so if i wanted to add more padding to the right i would of changed the second number
 
 note: we are not making a mobile ready site as it's out of my level of knowledge and understating of html at this point, maybe we'll get to it some day
+
+<br>
 
 ### add extra pages to our site
 adding extra pages is easy, just make another `.html` file, if you don't plan on making many of these extra pages you could get away with putting all of them in the root directory and this makes linking to other pages of the same site easier but i'll opt to make an extra page names `pages` to keep everything organized 
@@ -150,6 +170,9 @@ for our second page to find the favicon we also need to link it like this as wel
 ```
 <link rel="shortcut icon" type="image/ico" href="../favicon.ico"/>
 ```
+
+<br>
+
 ### add footer to our pages
 footer stays at the end of our page and usually contains contact information or web hosting and technologies, lets start by opening a footer tag:
 ```
@@ -172,8 +195,12 @@ made with github's free web hosting, look <a style="color: yellow;" href="https:
 ```
 for my second/project page i opted to use the `relative` option for `position` which puts our footer at the end of the page's content since i didn't want it to be shown on the page, you can also use a fixed postion in such cases of long pages but you need to add some background color styling to differentiate it from the contents of the page.
 
+<br>
+
 ### add white space in html
 anything more than one space between two words in html is not recognized/shown in the page, we can get around this by adding `&nbsp;` for one space or use it multiple times `&nbsp;&nbsp;`, use `&ensp;` for two spaces and `&emsp;` for 4 space. just put them anywhere you want additional spaces
+
+<br>
 
 ### align text to left and image to the right
 this seems like a very small issue but unless you watch the website at 100% page zoom the image does not stay at the same place in relation to the text on the screen. we go around this issue by:
@@ -192,6 +219,9 @@ the last step is to make our paragraph have automatic width `width: auto;`
 paragraph goes here
 </p>
 ```
+
+<br>
+
 ### keep banner from overflowing the page
 by default our banner image would overflow and get out of our page when zoomed in, add a overflow style to the whole page to keep this from happening:
 ```
@@ -201,6 +231,8 @@ now force our banner to always keep at 100% width and keep our whole page paddin
 ```
 <img style="width: 100%;" src="stuff/h-banner.jpg" ><br>
 ```
+
+<br>
 
 ### add go to top button
 add a simple un-intrusive go to top button, upload your image or simply use text
@@ -220,6 +252,8 @@ link it
 <a href="#foot">Go to bottom</a>
 ```
 
+<br>
+
 ### change background color or use an image
 in this example lets apply a gradient to our page using `background-image` style
 ```
@@ -232,6 +266,8 @@ applying and image to our background is also easy:
 background-image: url("background.jpg");
 ```
 be mindful of the the image location, if it's in a folder you to have to link it accordingly, for way more examples on this check this [page](https://www.edureka.co/blog/background-image-in-html/) as it was how i learned it
+
+<br>
 
 ### add some basic css
 cascading style sheets or css are an easier way to have an orginized place for all of our styles and will help you write more efficiently and type less duplicate codes, so far we added all the styles we needed inside our tags using `style=""` but if we know we have some styles that are needed to apply to many things we can write the style once in our css file and have it used automatically for basic tags or manually add them as a class, so lets show some example of this
@@ -270,6 +306,8 @@ and add this custom class to a paragraph
 ```
 and a paragraph that doesn't include this class will have a default and basic look
 
+<br>
+
 ### write in markdown and convert to html
 markdown is a very easy to write and style language that doesn't get in your way and it's extremely easy to write on, you can find some basic information on markdown formating on github [here ](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax) 
 
@@ -296,6 +334,8 @@ i'm planning to use this method to easily convert my markdown tutorials to pages
 
 update: converting 9 markdown tutorial pages to html only took 2 hours to get up and running, this is the fastest way of writing html i know of
 
+<br>
+
 ### embed video in your page
 for embedding video to our page we can use the `<video></video>` tag, we can also specify to always show the video controls and loop the video by placing them inside our opening tags `<video controls loop>` and then embed the video using `<source src="video.mp4" type="video/mp4"` we also specified the type of video we are embedding which is `video/mp4`
 ```
@@ -314,6 +354,8 @@ video {
     height: auto;
 }
 ```
+
+<br>
 
 ### make a nested menu at the top of the page
 for making a nested menu we need to use two tags, first one is the ul tag `<ul>` which makes our menu entry and li tag `<li>` which lets us nest links inside it
@@ -376,6 +418,8 @@ like all the other examples so far if you are linking to a page that's not in th
 
 this information was taken from this page [here](https://dev.to/monalishamondol/how-to-create-drop-down-menu-in-html-and-css-3e14)
 
+<br>
+
 ### add a nerd font for easy glyphs/icons on your website
 i've been using actual images for logos on my website, it's time to level-up and use a nerd font and use it's glyphs in our website
 
@@ -410,5 +454,7 @@ Made with <i class="nf nf-oct-mark_github"></i> &nbsp; github's free web hosting
 some of these glyphs are 2 width characters so if you find them getting stuck together or to other words you can add some whitespace after them using `&nbsp;`
 
 now you can easily use any nerd font glyphs inside your website as long as you have the font itself and the css file included
+
+<br>
 
 #### more stuff will be added as i learn ...

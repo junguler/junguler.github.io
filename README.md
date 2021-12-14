@@ -22,6 +22,7 @@ my work in progress website, i try to document everything i learn here
  * [write in markdown and convert it to html](https://github.com/junguler/junguler.github.io#write-in-markdown-and-convert-to-html)
  * [embed video in your page](https://github.com/junguler/junguler.github.io#embed-video-in-your-page)
  * [make a nested menu at the top of the page](https://github.com/junguler/junguler.github.io#make-a-nested-menu-at-the-top-of-the-page)
+ * [add a nerd font for easy glyphs/icons](https://github.com/junguler/junguler.github.io#add-a-nerd-font-for-easy-glyphsicons-on-your-website)
 
 ### first step
 make a github account, start a new repo with your username and add `.github.io` at the end of it, see [here](https://pages.github.com/) for detailed information
@@ -375,7 +376,7 @@ like all the other examples so far if you are linking to a page that's not in th
 
 this information was taken from this page [here](https://dev.to/monalishamondol/how-to-create-drop-down-menu-in-html-and-css-3e14)
 
-### add a nerd font for eacy glyphs/icons on your website
+### add a nerd font for easy glyphs/icons on your website
 i've been using actual images for logos on my website, it's time to level-up and use a nerd font and use it's glyphs in our website
 
 first step is to download an already made css provided by the nerd font repo [here](https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/css/nerd-fonts-generated.css) download it on your computer, now download a nerd font (i've included one in this repo) and change the name of the font on line number 11 and add it's location relative to the root of your website directory 
